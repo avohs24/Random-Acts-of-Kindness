@@ -4,9 +4,9 @@ A project created and developed by Meagan Gallagher, Tiffany Hyatt, Alex Vohs an
 
 
 ## Overview and Purpose of Application
-[**Random-Acts-of-Kindess**](https://heroku-link-here/) is a single-page app built using React. The Node.js server routes are handled with the Express Framework. Sequelize is used to store and retreive data in the routes from the MySql database. The charity data is provided by the [Org Hunter](https://orghunter.3scale.net/) API, while payment is managed using the [Stripe](https://stripe.com/) API.
+[**Random-Acts-of-Kindess**](https://heroku-link-here/) is a single-page app built using React. The Node.js server routes are handled with the Express Framework. Sequelize is used to store and retrieve data in the routes from the MySql database. The charity data is provided by the [Org Hunter](https://orghunter.3scale.net/) API, while payment is managed using the [Stripe](https://stripe.com/) API.
 
-We find, as users, that we want to contirbute financially to causes and organizations we care about, but sometimes feel overwhelmed by the plethora of worthy organizations out there and deciding the amount each deserves to receive. Furthermore, we often find ourselves donating to the larger national organizations, while remainign ignorant of smaller causes in our communities that might benefit even more from a small donation. Random-Acts-of-Kindess invites the user to enter ANY dollar amount and whatever filtering criteria she wishes (by location, cause, etc). Then, she is matched with an organization and can choose to donate or see another option. The app saves donation history, tax deductable receipts, and vizualizes donation data for the user.
+We find, as users, that we want to contribute financially to causes and organizations we care about, but sometimes feel overwhelmed by the plethora of worthy organizations out there and deciding the amount each deserves to receive. Furthermore, we often find ourselves donating to the larger national organizations, while remaining ignorant of smaller causes in our communities that might benefit even more from a small donation. Random-Acts-of-Kindess invites the user to enter ANY dollar amount and whatever filtering criteria she wishes (by location, cause, etc). Then, she is matched with an organization and can choose to donate or see another option. The app saves donation history, tax deductible receipts, and visualizes donation data for the user.
 
 ## Technologies Used
 
@@ -43,6 +43,4 @@ This web application was built using the following technologies:
 
 
 ## Future Plans
-- Users upload pictures of each playground.
-- Reintegrate weather API and UV index for each location.
-- We choose not to have users upload reviews, as we don't have the resources to manage the entries for discriminatory language and content.
+
