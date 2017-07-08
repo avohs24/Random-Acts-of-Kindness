@@ -1,5 +1,5 @@
 # Random-Acts-of-Kindess
-A project created and developed by Meagan Gallagher, Tiffany Hyatt, Alex Vohs and [Jane Claire Remick](https://github.com/pixiephreak)
+A project created and developed by [Meagan Gallagher](https://github.com/mgallagher06), [Tiffany Hyatt](https://github.com/trenett12), Alex Vohs and [Jane Claire Remick](https://github.com/pixiephreak)
 
 ## Overview and Purpose of Application
 [**Random-Acts-of-Kindess**](https://heroku-link-here/) is a single-page app built using React. The Node.js server routes are handled with the Express Framework. Sequelize is used to retrieve data in the routes from user data stored in the MySql database. The charity data is provided by the [Org Hunter](https://orghunter.3scale.net/) API, while payment is managed using the [Stripe](https://stripe.com/) API.
