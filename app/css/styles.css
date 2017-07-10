@@ -1,12 +1,100 @@
-nav ul {
-  margin: 0;
-  padding: 6px;
-  list-style: none; }
+body {
+  background-image: url("../../public/assets/imgs/background.jpg");
+  background-repeat: repeat, no-repeat;
+  background-size: auto, 100% 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: #000; }
 
-nav li {
-  display: inline-block; }
+.smallimg {
+  width: 95px;
+  height: 75px; }
 
-nav a {
-  display: block;
-  padding: 6px 12px;
-  text-decoration: none; }
+nav .nav-wrapper {
+  background-color: #fff;
+  height: 120%;
+  position: relative; }
+
+nav ul a {
+  color: #000; }
+
+p {
+  color: #008b98;
+  line-height: 24px;
+  margin-top: 14px; }
+
+.kurale {
+  font-family: "Kurale", serif;
+  font-size: 30px; }
+
+.crimson {
+  font-family: "Crimson Text", serif;
+  font-size: 20px; }
+
+.main {
+  width: 100%;
+  height: 100%; }
+
+#cellular {
+  width: 230px;
+  height: 400px;
+  background-color: #000;
+  margin-top: 50px;
+  margin-left: 50px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px; }
+
+#cellular-inside {
+  width: 200px;
+  height: 330px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px; }
+
+#homebutton {
+  width: 40px;
+  height: 40px;
+  border-radius: 70%;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px; }
+
+.center {
+  margin-left: auto;
+  margin-right: auto; }
+
+input[type=text]:not(.browser-default) {
+  width: 70%;
+  border: 1px solid #000;
+  height: 1.5em; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  background-color: #008b98;
+  color: #fff; }
+
+#aboutus {
+  width: 600px;
+  height: 250px;
+  background-color: #fff;
+  margin-top: 90px; }
+
+h2 {
+  font-size: 24px;
+  color: #008b98;
+  text-align: left;
+  font-family: "Crimson Text", serif;
+  margin-left: 10px; }
+
+.padding {
+  padding: 10px; }
+
+.paddingtwo {
+  padding: 30px; }

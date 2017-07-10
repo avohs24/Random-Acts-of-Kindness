@@ -1,17 +1,132 @@
-$padding: 6px;
+$maincolor:  #000;
+$smallwidth: 95px;
+$smallheight: 75px;
+$bgmaincolor: #fff;
+$bluecolor: #008b98;
+$largefont: 30px;
+$smallfont: 20px;
+$kurale: 'Kurale', serif;
+$crimson: 'Crimson Text', serif;
+$center: center;
+$white: #fff;
 
-nav {
-  ul {
-    margin: 0;
-    padding: $padding;
-    list-style: none;
-  }
 
-  li { display: inline-block; }
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
 
-  a {
-    display: block;
-    padding: $padding 12px;
-    text-decoration: none;
-  }
+body {
+	background-image: url("../../public/assets/imgs/background.jpg");
+	background-repeat: repeat, no-repeat;
+	background-size: auto, 100% 100%;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	color: $maincolor;
+	}
+
+.smallimg {
+    width: $smallwidth;
+    height: $smallheight;
+}
+
+nav .nav-wrapper {
+    background-color: $bgmaincolor;
+    height: 120%;
+    position: relative;
+}
+
+nav ul a {
+    color: $maincolor;
+}
+
+p {
+    color: $bluecolor;
+    line-height: 24px;
+    margin-top: 14px;
+}
+
+.kurale {
+    font-family: $kurale;
+    font-size: $largefont;
+}
+
+.crimson {
+    font-family: $crimson;
+    font-size: $smallfont;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+#cellular {
+    width: 230px;
+    height: 400px;
+    background-color: $maincolor;
+    margin-top: 50px;
+    margin-left: 50px;
+    @include border-radius(15px);
+}
+
+#cellular-inside {
+    width: 200px;
+    height: 330px;
+    background-color: $white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    @include border-radius(15px);
+}
+
+#homebutton {
+    width: 40px;
+    height: 40px;
+    border-radius: 70%;
+    background-color: $white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type=text]:not(.browser-default) {
+    width: 70%;
+    border: 1px solid #000;
+    height: 1.5em;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    background-color: $bluecolor;   
+    color: $white;
+}
+
+#aboutus {
+    width: 600px;
+    height: 250px;
+    background-color: $white;
+    margin-top: 90px;
+}
+
+h2 {
+    font-size: 24px;
+    color: $bluecolor;
+    text-align: left;
+    font-family: $crimson;
+    margin-left: 10px;
+}
+
+.padding {
+    padding: 10px;
+}
+
+.paddingtwo {
+    padding: 30px;
 }
