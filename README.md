@@ -11,10 +11,10 @@ We find, as users, that we want to contribute financially to causes and organiza
 ## Technologies Used
 
 - Data & Database
-  -Sql
-  -Sequelize ORM
-  -Express.js
-  -Redux
+  - Sql
+  - Sequelize ORM
+  - Express.js
+  - Redux
 - APIs
   - Stripe
   - Org Hunter
