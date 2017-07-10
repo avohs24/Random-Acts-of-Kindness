@@ -1,9 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>My App</title>
+  <title>Random Acts of Kindness</title>
+  <!--Import Google Icons and Fonts-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+  <!--Import Materialize.CSS-->
+  <link type="text/css" rel="stylesheet" href="../app/sass/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../app/css/styles.css" media="screen,projection" />
 </head>
+
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <!--Navigation Bar-->
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <div class="row">
+            <div class="col m1">
+              <a href="#" class="brand-logo"><img class="smallimg" src="../public/assets/imgs/rak-logo.jpg"></a>
+            </div>
+            <div class="col m11">
+              <p class="center kurale">RAK<br><span class="crimson">Random Acts of Kindness</span></p>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--Main Container-->
+    <div class="container main">
+      <!--Cellular Phone-->
+      <div class="row">
+        <div class="col m4">
+          <div id="cellular">
+            <!--Cellular Content-->
+            <div class="center" id="cellular-inside">
+              <img class="smallimg" src="../public/assets/imgs/rak-logo.jpg">
+              <form action="">
+                Category Type: <br><input id="category" type="text" name="Category" value=""><br><br><br>
+                <input type="submit" value="View Charities">
+              </form>
+            </div>
+            <div id="homebutton">
+            </div>
+          </div>
+        </div>
+        <!--About Us Container-->
+        <div class="col m8">
+          <div id="aboutus">
+            <h2>What Is Rak?</h2>
+            <p class="padding">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+              standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+              make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+              Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+              of Lorem Ipsum.</p>
+          </div>
+          <!--Login and Submit Buttons-->
+          <div class="row center paddingtwo">
+            <div class="col m4">
+              <button id="login" class="btn waves-effect waves-light" type="submit" name="action">Login
+              <i class="material-icons right">send</i>
+              </button>
+            </div>
+            <div class="col m4">
+              <button id="signup" class="btn waves-effect waves-light" type="submit" name="action">Sign Up
+              <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Import jQuery and materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="../utils/js/bin/materialize.min.js"></script>
+</body>
+
 </html>
