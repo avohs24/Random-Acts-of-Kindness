@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchWeather} from '../actions/index';
+import { fetchOrganization} from '../actions/index';
 
 class SearchBar extends Component {
   constructor(props){
@@ -27,7 +27,7 @@ class SearchBar extends Component {
         onSubmit={this.handleSubmit}
         className='input-group'>
         <input
-          placeholder='get a five-day forecast in your favorite city'
+          placeholder='search all organizations'
           className='form-control'
           value={this.state.term}
           //value of this is not Component
@@ -44,7 +44,7 @@ class SearchBar extends Component {
 
 //provide access to this.state.props
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({fetchWeather}, dispatch)
+  return bindActionCreators({fetchOrganization}, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(SearchBar);
