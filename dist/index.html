@@ -8,16 +8,47 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
-  <!--Import Materialize.CSS-->
+  <!--Link to Materialize.CSS-->
   <link type="text/css" rel="stylesheet" href="../app/sass/materialize.css" media="screen,projection" />
   <link type="text/css" rel="stylesheet" href="../app/css/styles.css" media="screen,projection" />
+  <!--Import Animate.CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 
 <body>
   <div id="app">
+
   <!--Import jQuery and materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+    $("#viewcharity").on("click", function () {
+      $("#aboutus").hide();
+      $(".paddingtwo").hide();
+      $("#charities").removeClass("hidden");
+      $("#charities").show();
+    })
+    $("#login").on("click", function () {
+      $("#aboutus").hide();
+      $(".paddingtwo").hide();
+      $("#cellular").hide();
+      $("#loginpg").removeClass("hidden");
+      $("#loginpg").show();
+    })
+    $("#signup").on("click", function () {
+      $("#aboutus").hide();
+      $(".paddingtwo").hide();
+      $("#cellular").hide();
+      $("#signuppage").removeClass("hidden");
+      $("#signup").show();
+    })
+// Reset function for the reset materialize button. This isn't working!!
+    function resetFunc() {
+      document.getElementById("loginform").reset();
+    }
+  </script>
   <script type="text/javascript" src="../utils/js/bin/materialize.min.js"></script>
+
+
 <script type="text/javascript" src="bundle.js"></script></body>
 
 </html>
