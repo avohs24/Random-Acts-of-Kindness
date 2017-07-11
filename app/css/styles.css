@@ -19,7 +19,7 @@ nav ul a {
   color: #000; }
 
 p {
-  color: #008b98;
+  color: #26A69A;
   line-height: 24px;
   margin-top: 14px; }
 
@@ -62,7 +62,8 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 70%;
-  background-color: #fff;
+  background-color: #000;
+  border: 2px solid #999;
   margin-left: auto;
   margin-right: auto;
   margin-top: 15px; }
@@ -73,11 +74,10 @@ p {
 
 input[type=text]:not(.browser-default) {
   width: 70%;
-  border: 1px solid #000;
   height: 1.5em; }
 
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
-  background-color: #008b98;
+  background-color: #26A69A;
   color: #fff; }
 
 #aboutus {
@@ -88,7 +88,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 
 h2 {
   font-size: 24px;
-  color: #008b98;
+  color: #26A69A;
   text-align: left;
   font-family: "Crimson Text", serif;
   margin-left: 10px; }
@@ -98,3 +98,33 @@ h2 {
 
 .paddingtwo {
   padding: 30px; }
+
+.bodycontent {
+  width: 650px;
+  height: 400px;
+  background-color: #fff;
+  margin-top: 50px;
+  box-shadow: 5px 5px 15px #000; }
+
+.signupcontainer {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  margin-top: 50px;
+  box-shadow: 5px 5px 15px #000;
+  padding: 15px; }
+
+.logincontainer {
+  width: 50%;
+  height: 50%;
+  margin-top: 50px;
+  background-color: #fff;
+  box-shadow: 5px 5px 15px #000;
+  padding: 15px; }
+
+textarea.materialize-textarea {
+  padding: 0; }
+
+.hidden {
+  display: none;
+  visibility: hidden; }

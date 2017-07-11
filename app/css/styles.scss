@@ -2,15 +2,16 @@ $maincolor:  #000;
 $smallwidth: 95px;
 $smallheight: 75px;
 $bgmaincolor: #fff;
-$bluecolor: #008b98;
+$bluecolor: #26A69A;
 $largefont: 30px;
 $smallfont: 20px;
 $kurale: 'Kurale', serif;
 $crimson: 'Crimson Text', serif;
 $center: center;
 $white: #fff;
-
-
+@mixin padding($padding) {
+    padding: $padding;
+}
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -86,7 +87,8 @@ p {
     width: 40px;
     height: 40px;
     border-radius: 70%;
-    background-color: $white;
+    background-color: $maincolor;
+    border: 2px solid #999;
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
@@ -99,7 +101,7 @@ p {
 
 input[type=text]:not(.browser-default) {
     width: 70%;
-    border: 1px solid #000;
+    // border: 1px solid #000;
     height: 1.5em;
 }
 
@@ -124,9 +126,44 @@ h2 {
 }
 
 .padding {
-    padding: 10px;
+    @include padding(10px);
 }
 
 .paddingtwo {
-    padding: 30px;
+    @include padding(30px);
+}
+
+.bodycontent {
+    width: 650px;
+    height: 400px;
+    background-color: $white;
+    margin-top: 50px;
+    box-shadow: 5px 5px 15px #000;
+}
+
+.signupcontainer {
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    margin-top: 50px;
+    box-shadow: 5px 5px 15px #000;
+    padding: 15px;
+}
+
+.logincontainer {
+    width: 50%;
+    height: 50%;
+    margin-top: 50px;
+    background-color: $white;
+    box-shadow: 5px 5px 15px #000;
+    padding: 15px;
+}
+
+textarea.materialize-textarea {
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
 }
