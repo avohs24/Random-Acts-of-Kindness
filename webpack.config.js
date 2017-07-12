@@ -56,9 +56,18 @@ module.exports = {
      loader: 'file'
    },
    {
+            test: /\.scss$/,
+            use: [{
+                loader: "style-loader" // creates style nodes from JS strings 
+            },  {
+                loader: "sass-loader" // compiles Sass to CSS 
+            }]
+   },
+   {
      test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
      loader: 'url?limit=10000&mimetype=image/svg+xml'
-   }
+   },
+   
     ]
   },
   plugins: [HTMLWebpackPluginConfig],
