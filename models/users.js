@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes){
   var user = sequelize.define("User",{
     id: {
-      type: Datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
@@ -62,6 +62,15 @@ module.exports = function(sequelize, DataTypes){
         len: [1]
       }
     }
-  });
-  return user; 
+  },
+  {
+      classMethods: {
+      associate: function(models){
+        User.hasMany(models.Receipt, {
+          onDelete: 'cascade'
+        });
+      }
+  }
+});
+  return user;
 }

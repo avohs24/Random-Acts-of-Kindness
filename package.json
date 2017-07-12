@@ -1,7 +1,7 @@
 {
   "name": "mongoose_skeleton",
   "version": "1.0.0",
-  "description": "",
+  "description": "A project created and developed by [Meagan Gallagher](https://github.com/mgallagher06), [Tiffany Hyatt](https://github.com/trenette12), [Alex Vohs](https://github.com/avohs24) and [Jane Claire Remick](https://github.com/pixiephreak)",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,11 +14,13 @@
     "axios": "^0.16.2",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "express-session": "^1.15.3",
     "gulp-less": "^3.3.2",
     "morgan": "^1.7.0",
     "mysql": "^2.13.0",
+    "mysql2": "^1.3.5",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "react": "^0.14.3",
@@ -42,5 +44,13 @@
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^1.13.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avohs24/Random-Acts-of-Kindness.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avohs24/Random-Acts-of-Kindness/issues"
+  },
+  "homepage": "https://github.com/avohs24/Random-Acts-of-Kindness#readme"
 }
