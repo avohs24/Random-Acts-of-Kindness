@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class OrgList extends Component {
+//throwing an error, to be resolved after CORS issue.
+class OrgList extends Component {
   renderOrgs(orgData){
+    console.log(orgData);
     return(
+      // <tr>
+      //   <td key= ><a href={orgData.url}>{orgData.charityName}</a></td>
+      //   <td key=>{orgData.category}</td>
+      //   <td key=>{orgData.city}, {orgData.data.state}</td>
+      //   <td key=>{orgData.deductibilityCd}</td>
+      //   <button><a href={orgData.donationUrl}>donate</a></button>
+      // </tr>
       <tr>
-        <td><a href={orgData.data.url}>{orgData.data.charityName}</a></td>
-        <td>{orgData.data.category}</td>
-        <td>{orgData.data.city}, {orgData.data.state}</td>
-        <td>{orgData.data.deductibilityCd}</td>
-        <button><a href{orgData.data.donationUrl}>donate</a></button>
+        <td>org</td>
+        <td>cat</td>
+        <td>loc</td>
+        <td>deduct</td>
+        <td><button>donate</button></td>
       </tr>
+
     )
   }
   render(){
@@ -31,3 +42,9 @@ export default class OrgList extends Component {
     )
   }
 }
+
+function mapStateToProps({organizations}){
+  return { organizations }
+}
+
+export default connect(mapStateToProps)(OrgList)
