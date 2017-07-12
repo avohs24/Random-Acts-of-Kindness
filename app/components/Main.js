@@ -4,7 +4,23 @@ import SearchBar from '../containers/search_bar'
 export default class Main extends Component {
   render() {
     return (
+      <div>
       <SearchBar />
+      <div classNameName="navbar-fixed">
+        <nav>
+          <div className="nav-wrapper">
+            <div className="row">
+              <div className="col m1">
+                <a href="#" className="brand-logo"><img className="smallimg" src="../public/assets/imgs/rak-logo.jpg"/></a>
+              </div>
+              <div className="col m11">
+                <p className="center kurale">RAK<br/><span className="crimson">Random Acts of Kindness</span></p>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
     );
   }
 }

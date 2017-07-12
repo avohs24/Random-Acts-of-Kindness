@@ -1,4 +1,10 @@
-export default function(state =  null, action){
-  console.log('Action recieved', action);
-  return state;
-}
+// import { FETCH_ORG } FROM '../actions/index'
+//
+// export default function(state =  [], action){
+//   switch(action.type){
+//     case FETCH_ORG:
+//       return [ action.payload.data, ...state]
+//   }
+//   console.log('Action recieved', action);
+//   return state;
+// }
