@@ -128,3 +128,7 @@ textarea.materialize-textarea {
 .hidden {
   display: none;
   visibility: hidden; }
+
+.profilebg {
+  background-color: #fff;
+  background-image: none; }
