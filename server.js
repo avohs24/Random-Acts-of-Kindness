@@ -5,7 +5,7 @@ var logger = require("morgan");
 var passport = require('passport');
 var session = require('express-session');
 var env = require('dotenv').load();
-
+var path = require('path');
 var db = require("./models");
 
 // Create a new express app
@@ -40,9 +40,9 @@ app.use(passport.session()); //persistent login sessions
 // -------------------------------------------------
 // * (get) - load HTML page (with ReactJS) in public/index.html. Make sure you put this after all other GET routes
 //redirect the user to our rendered React application
-app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/dist/index.html");
-});
+app.get('*', function (request, response){
+  response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
 
 // -------------------------------------------------
 

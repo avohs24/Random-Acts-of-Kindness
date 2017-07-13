@@ -6,8 +6,6 @@ export default class Main extends Component {
   render() {
     return (
       <div>
-      <SearchBar />
-      <OrgList />
       <div classNameName="navbar-fixed">
         <nav>
           <div className="nav-wrapper">
