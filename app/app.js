@@ -9,7 +9,9 @@ import reducers from './reducers';
 import Materialize from 'materialize-css'
 import Css from './css/styles.css';
 import Main from './components/Main';
+import Login from './components/Login';
 import Organizations from './components/Organizations';
+import SignIn from './components/Sign_in';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -17,10 +19,12 @@ const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter history={createBrowserHistory()}>
-      <Switch>
+      <div>
         <Main />
+        <Route path="/login" component={Login} />
         <Route path="/organizations" component={Organizations} />
-      </Switch>
+        <Route path="/signin" component={SignIn} />
+      </div>
     </BrowserRouter>
   </Provider>
   , document.getElementById('app'));
