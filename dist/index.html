@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Random Acts of Kindness</title>
+  <!--Import Google Icons and Fonts-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <!--Import Animate.CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<body>
+  <div id="app">
+
+  <!--Import jQuery and materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+    $("#viewcharity").on("click", function () {
+      $("#aboutus").hide();
+      $(".paddingtwo").hide();
+      $("#charities").removeClass("hidden");
+      $("#charities").show();
+    })
+    $("#login").on("click", function () {
+      $("#aboutus").hide();
+      $(".paddingtwo").hide();
+      $("#cellular").hide();
+      $("#loginpg").removeClass("hidden");
+      $("#loginpg").show();
+    })
+    $("#signup").on("click", function () {
+      $("#aboutus").hide();
+      $(".paddingtwo").hide();
+      $("#cellular").hide();
+      $("#signuppage").removeClass("hidden");
+      $("#signup").show();
+    })
+// Reset function for the reset materialize button. This isn't working!!
+    function resetFunc() {
+      document.getElementById("loginform").reset();
+    }
+  </script>
+  <!-- <script type="text/javascript" src="../utils/js/bin/materialize.min.js"></script> -->
+
+
+<script type="text/javascript" src="bundle.js"></script></body>
+
+</html>

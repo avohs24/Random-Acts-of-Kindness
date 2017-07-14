@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SearchBar from '../containers/search_bar'
-import LogoImg from '../../public/assets/imgs/rak-logo.jpg'
-import OrgList from '../containers/orgs_list'
+import SearchBar from '../containers/search_bar';
+import LogoImg from '../../public/assets/imgs/rak-logo.jpg';
+import OrgList from '../containers/orgs_list';
 
 export default class Main extends Component {
   render() {
