@@ -23,7 +23,7 @@ app.use(bodyParser.json({type: "application/vnd.api+json"}));
 app.use(express.static(__dirname + '/dist'))
 
 //For passport sessions
-app.use(session({secret: 'randomactofkindness', saveUninitialized: true, resave: true}));
+app.use(session({secret: 'randomactsofkindness', saveUninitialized: true, resave: true}));
 
 app.use(passport.initialize());
 app.use(passport.session()); //persistent login sessions
@@ -40,7 +40,7 @@ app.get('*', function(request, response) {
 // -------------------------------------------------
 
 // Starting our express server
-db.sequelize.sync({force: true}).then(function() {
+db.sequelize.sync({force: false}).then(function() {
     app.listen(PORT, function() {
         console.log("App listening on PORT: " + PORT);
     });
