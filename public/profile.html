@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Random Acts of Kindness</title>
+  <title>RAK - My Profile</title>
   <!--Import Google Icons and Fonts-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
@@ -33,14 +33,27 @@
       </nav>
     </div>
     <!--Main Container-->
-    <div class="container main">
 
+    <div class="container" id="profile"><br>
+      <div class="row">
+        <div class="col m4">
+          <img class="left smallimg" src="../public/assets/imgs/placeholder-user-photo.png">
+          <h2 class="left">My Profile<span id="welcomeuser"></span></h2>
+        </div>
+        <div class="col m8">
+          <div class="right"><a class="waves-effect waves-light btn"><i class="material-icons left">payment</i>Donation History</a></div>
+        </div>
+      </div>
+      <p class="left">Name:&nbsp;<span id="profilename"></span><br><br><br> 
+      Street Address:&nbsp;<span id="profileaddress"></span><br><br><br>
+      City:&nbsp;<span id="profilecity"></span><br><br><br>
+      State:&nbsp;<span id="profilestate"></span><br><br><br> 
+      Zip Code:&nbsp;<span id="profilezip"></span><br><br><br></p>
     </div>
-  </div>
 
-  <!--Import jQuery and materialize.js-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <!--<script>
+    <!--Import jQuery and materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!--<script>
     $("#viewcharity").on("click", function () {
       $("#aboutus").hide();
       $(".paddingtwo").hide();
@@ -66,7 +79,7 @@
       document.getElementById("loginform").reset();
     }
   </script>-->
-  <script type="text/javascript" src="../utils/js/bin/materialize.min.js"></script>
+    <script type="text/javascript" src="../utils/js/bin/materialize.min.js"></script>
 
 
 </body>
