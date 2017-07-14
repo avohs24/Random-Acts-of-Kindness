@@ -8,185 +8,16 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
-  <!--Link to Materialize.CSS-->
-  <link type="text/css" rel="stylesheet" href="../app/sass/materialize.css" media="screen,projection" />
-  <link type="text/css" rel="stylesheet" href="../app/css/styles.css" media="screen,projection" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
   <!--Import Animate.CSS-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 
 <body>
   <div id="app">
-    <!--Navigation Bar-->
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <div class="row">
-            <div class="col m1">
-              <a href="index.html" class="brand-logo"><img class="smallimg" src="../public/assets/imgs/rak-logo.jpg"></a>
-            </div>
-            <div class="col m11">
-              <p class="center kurale">RAK<br><span class="crimson">Random Acts of Kindness</span></p>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-    <!--Main Container-->
-    <div class="container main">
-      <!--Cellular Phone-->
-      <div class="row">
-        <div class="col m4">
-          <div id="cellular">
-            <!--Cellular Content-->
-            <div class="center" id="cellular-inside">
-              <a href="index.html"><img class="smallimg" src="../public/assets/imgs/rak-logo.jpg"></a>
-              <form>
-                Category Type: <br><br><input id="category" type="text" name="Category" value=""><br><br><br>
-              </form>
-              <button id="viewcharity" class="btn waves-effect waves-light" type="submit" name="action">View Charities
-              <i class="material-icons right">send</i>
-              </button>
-            </div>
-            <div id="homebutton">
-            </div>
-          </div>
-        </div>
-        <!--About Us Container-->
-        <div class="col m8">
-          <div id="aboutus">
-            <h2>What Is RAK?</h2>
-            <p class="padding">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-              standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-              make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-              Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-              of Lorem Ipsum.</p>
-          </div>
-          <!--Login and Submit Buttons-->
-          <div class="row center paddingtwo">
-            <div class="col m4">
-              <button id="login" class="btn waves-effect waves-light" type="submit" name="action">Login
-              <i class="material-icons right">send</i>
-              </button>
-            </div>
-            <div class="col m4">
-              <button id="signup" class="btn waves-effect waves-light" type="submit" name="action">Sign Up
-              <i class="material-icons right">send</i>
-              </button>
-            </div>
-          </div>
-          <!--View Charities Container, by default is hidden until user clicks on View Charities-->
-          <div id="charities" class="hidden bodycontent animated bounceInRight">
-            <p id="charitybg" class="padding">Please select the charity you'd like to donate to below.</p>
-          </div>
-          <!--Login Page, shown when user clicks on Login-->
-          <div id="loginpg" class="hidden logincontainer animated bounceInDown">
-            <div class="row">
-              <form id="loginform" class="col s12">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <i class="material-icons prefix">person</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                    <label for="icon_prefix2">Username</label>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <i class="material-icons prefix">lock outline</i>
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
-                  </div>
-                </div>
-                <div class="row center">
-                  <div class="col m4">
-                    <button id="loginsubmit" class="btn waves-effect waves-light" type="submit" name="action">Submit
-              <i class="material-icons right">send</i>
-              </button>
-                  </div>
-                  <div class="col m4">
-                    <button id="resetbutton" class="btn waves-effect waves-light" onclick="resetFunc" value="Reset Form" name="action">Reset
-              <i class="material-icons right">send</i>
-              </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--SignUp Page-->
-      <div class="container">
-
-        <div id="signuppage" class="hidden signupcontainer animated bounceInRight">
-          <div class="row">
-            <form id="signupform" class="col m12">
-              <div class="row">
-                <div class="input-field col m6">
-                  <input placeholder="First Name" id="first_name" type="text" class="validate">
-                  <label for="first_name">First Name</label>
-                </div>
-                <div class="input-field col m6">
-                  <input placeholder="Last Name" id="last_name" type="text" class="validate">
-                  <label for="last_name">Last Name</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col m12">
-                  <input placeholder="Street Address" id="address" type="text" class="validate">
-                  <label for="address">Street Address</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col m4">
-                  <input placeholder="City" id="city" type="text" class="validate">
-                  <label for="city">City</label>
-                </div>
-                <div class="input-field col m4">
-                  <input placeholder="State" id="state" type="text" class="validate">
-                  <label for="state">State</label>
-                </div>
-                <div class="row">
-                  <div class="input-field col m4">
-                    <input placeholder="Zip Code" id="zip-code" type="text" class="validate">
-                    <label for="zip-code">Zip Code</label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col m12">
-                  <input id="signuppassword" type="password" class="validate">
-                  <label for="signuppassword">Password</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col m12">
-                  <input id="confirmpassword" type="password" class="validate">
-                  <label for="confirmpassword">Confirm Password</label>
-                </div>
-              </div>
-              <div class="row center">
-                <div class="col m6">
-                  <button id="loginsubmit" class="btn waves-effect waves-light" type="submit" name="action">Submit
-              <i class="material-icons right">send</i>
-              </button>
-                </div>
-                <div class="col m6">
-                  <button id="resetbutton" class="btn waves-effect waves-light" onclick="resetFunc" value="Reset Form" name="action">Reset
-              <i class="material-icons right">send</i>
-              </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!--Import jQuery and materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -216,7 +47,7 @@
       document.getElementById("loginform").reset();
     }
   </script>
-  <script type="text/javascript" src="../utils/js/bin/materialize.min.js"></script>
+  <!-- <script type="text/javascript" src="../utils/js/bin/materialize.min.js"></script> -->
 
 
 </body>
