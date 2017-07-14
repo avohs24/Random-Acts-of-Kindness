@@ -9,13 +9,21 @@ import reducers from './reducers';
 import Materialize from 'materialize-css'
 import Css from './css/styles.css';
 import Main from './components/Main';
+// import components for react-router-dom routes
 import Login from './components/Login';
 import Organizations from './components/Organizations';
 import SignIn from './components/Sign_in';
+import SignUp from './components/Sign_up';
+import DonationCriteria from './components/Donation_criteria';
+import Donation from './components/Donation';
+import DonationSuccess from './components/Donation_success';
+import DonationFail from './components/Donation_fail';
+import DonationPortal from './components/Donation_portal';
+import DonationReceipts from './components/Donation_receipts';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
-
+//react-router-dom routes
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter history={createBrowserHistory()}>
@@ -24,6 +32,13 @@ ReactDOM.render(
         <Route path="/login" component={Login} />
         <Route path="/organizations" component={Organizations} />
         <Route path="/signin" component={SignIn} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/donation-criteria" component={DonationCriteria} />
+        <Route path="/donation" component={Donation} />
+        <Route path="/donation-success" component={DonationSuccess} />
+        <Route path="/donation-fail" component={DonationFail} />
+        <Route path="/donation-portal" component={DonationPortal} />
+        <Route path="/donation-receipts" component={DonationReceipts} />
       </div>
     </BrowserRouter>
   </Provider>
