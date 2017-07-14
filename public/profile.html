@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>RAK - My Profile</title>
+  <!--Import Google Icons and Fonts-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+  <!--Link to Materialize.CSS-->
+  <link type="text/css" rel="stylesheet" href="../app/sass/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../app/css/styles.css" media="screen,projection" />
+  <!--Import Animate.CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<body class="profilebg">
+  <div id="app">
+    <!--Navigation Bar-->
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <div class="row">
+            <div class="col m1">
+              <a href="index.html" class="brand-logo"><img class="smallimg" src="../public/assets/imgs/rak-logo.jpg"></a>
+            </div>
+            <div class="col m11">
+              <p class="center kurale">RAK<br><span class="crimson">Random Acts of Kindness</span></p>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--Main Container-->
+
+    <div class="container" id="profile"><br>
+      <div class="row">
+        <div class="col m4">
+          <img class="left smallimg" src="../public/assets/imgs/placeholder-user-photo.png">
+          <h2 class="left">My Profile<span id="welcomeuser"></span></h2>
+        </div>
+        <div class="col m8">
+          <div class="right"><a class="waves-effect waves-light btn"><i class="material-icons left">payment</i>Donation History</a></div>
+        </div>
+      </div>
+      <p class="left">Name:&nbsp;<span id="profilename"></span><br><br><br> 
+      Street Address:&nbsp;<span id="profileaddress"></span><br><br><br>
+      City:&nbsp;<span id="profilecity"></span><br><br><br>
+      State:&nbsp;<span id="profilestate"></span><br><br><br> 
+      Zip Code:&nbsp;<span id="profilezip"></span><br><br><br></p>
+    </div>
+
+    <!--Import jQuery and materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!--<script>
+    $("#viewcharity").on("click", function () {
+      $("#aboutus").hide();
+      $(".paddingtwo").hide();
+      $("#charities").removeClass("hidden");
+      $("#charities").show();
+    })
+    $("#login").on("click", function () {
+      $("#aboutus").hide();
+      $(".paddingtwo").hide();
+      $("#cellular").hide();
+      $("#loginpg").removeClass("hidden");
+      $("#loginpg").show();
+    })
+    $("#signup").on("click", function () {
+      $("#aboutus").hide();
+      $(".paddingtwo").hide();
+      $("#cellular").hide();
+      $("#signuppage").removeClass("hidden");
+      $("#signup").show();
+    })
+// Reset function for the reset materialize button. This isn't working!!
+    function resetFunc() {
+      document.getElementById("loginform").reset();
+    }
+  </script>-->
+    <script type="text/javascript" src="../utils/js/bin/materialize.min.js"></script>
+
+
+</body>
+
+</html>

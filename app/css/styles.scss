@@ -33,6 +33,12 @@ body {
     height: $smallheight;
 }
 
+#profileimg {
+    width: $smallwidth;
+    height: $smallheight;
+    border: 2px solid #999;
+    @include border-radius(50%);
+}
 nav .nav-wrapper {
     background-color: $bgmaincolor;
     height: 120%;
@@ -64,6 +70,11 @@ p {
     height: 100%;
 }
 
+#profile {
+    width: 80%;
+    height: 100%;
+    background-color: $white;
+}
 #cellular {
     width: 230px;
     height: 400px;
@@ -97,6 +108,10 @@ p {
 .center {
     margin-left: auto;
     margin-right: auto;
+}
+
+.padding {
+    padding-bottom: 10px;
 }
 
 input[type=text]:not(.browser-default) {
@@ -151,8 +166,8 @@ h2 {
 }
 
 .logincontainer {
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
     margin-top: 50px;
     background-color: $white;
     box-shadow: 5px 5px 15px #000;
@@ -166,4 +181,9 @@ textarea.materialize-textarea {
 .hidden {
     display: none;
     visibility: hidden;
+}
+
+.profilebg {
+    background-color: $white;
+    background-image: none;
 }
