@@ -13,7 +13,7 @@ class OrgList extends Component {
         <td>{orgData.category}</td>
         <td>{orgData.city}, {orgData.state}</td>
         <td>{orgData.deductibilityCd}</td>
-        <button><a href={orgData.donationUrl}>donate</a></button>
+        <td><button><a href={orgData.donationUrl}>donate</a></button></td>
       </tr>
     )
   }
