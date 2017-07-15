@@ -24,16 +24,7 @@
         len: [1, 7]
     	}
     },
-
-	Donated_at: {
-  	type: DataTypes.DATE,
-  	allowNull: false,
-  	defaultValue: sequelize.NOW,
-  	validate: {
-  		len: [1, 8]
-    		}
-  		}
-    },
+  },
   {
     classMethods: {
     associate: function(models){

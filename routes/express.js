@@ -37,6 +37,22 @@ app.post("/api/signup", function(req, res) {
     });
   });
 
+	app.post("/api/receipt", function(req, res) {
+	    console.log(req.body);
+	    db.Receipt.create({
+	        id: req.body.id,
+	        firstName: req.body.firstName,
+	        lastName: req.body.lastName,
+	        Amount_donated: req.body.Amount_donated
+	        // Should we add email to the user model?
+	          // email: req.body.email,
+	    }).then(function() {
+	      res.redirect(200, "/api/login");
+	    }).catch(function(err) {
+	      res.json(err);
+	    });
+	  });
+
 // GET
 
 // Route for signing user out
