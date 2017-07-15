@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-app.use(express.static(__dirname + '/dist'))
+app.use(express.static(__dirname + '/dist'));
 
 
 //For passport sessions
@@ -42,7 +42,7 @@ app.use(passport.session()); //persistent login sessions
 //redirect the user to our rendered React application
 app.get('*', function (request, response){
   response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
-})
+});
 
 // -------------------------------------------------
 
