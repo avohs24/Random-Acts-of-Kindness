@@ -6,6 +6,7 @@ import OrgList from '../containers/orgs_list';
 export default class Main extends Component {
   render() {
     return (
+
       <div className="navbar-fixed">
         <nav>
           <div className="nav-wrapper">

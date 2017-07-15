@@ -20,6 +20,7 @@ import DonationSuccess from './components/Donation_success';
 import DonationFail from './components/Donation_fail';
 import DonationPortal from './components/Donation_portal';
 import DonationReceipts from './components/Donation_receipts';
+import Index from './components/Index';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -29,6 +30,7 @@ ReactDOM.render(
     <BrowserRouter history={createBrowserHistory()}>
       <div>
         <Main />
+        <Route path="/index" component={Index} />
         <Route path="/login" component={Login} />
         <Route path="/organizations" component={Organizations} />
         <Route path="/signin" component={SignIn} />
