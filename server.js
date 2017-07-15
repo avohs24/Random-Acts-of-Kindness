@@ -38,12 +38,12 @@ app.use(passport.session()); //persistent login sessions
 //redirect the user to our rendered React application
 
 
-app.get('/api/get-organizations', function (req, res) {
+app.get('/api/get-organizations/:term', function (req, res) {
   // '/api/get-orgnaizations' called from client
   const API_KEY = '58c5806d11fbc6c7da9b796db4f9a77c';
   const ROOT_URL = `http://data.orghunter.com/v1/charitysearch?user_key=${API_KEY}`;
   const url = `${ROOT_URL}&searchTerm=$`;
-  const query = 'wildlife';
+  const query = req.params.term
   function orgRequest(endpoint,term){
     request(endpoint+term , function (error, response, body) {
       console.log(endpoint+term);

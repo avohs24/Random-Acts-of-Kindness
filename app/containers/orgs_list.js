@@ -6,21 +6,13 @@ class OrgList extends Component {
   renderOrgs(orgData){
     console.log(orgData);
     return(
-      // <tr>
-      //   <td key= ><a href={orgData.url}>{orgData.charityName}</a></td>
-      //   <td key=>{orgData.category}</td>
-      //   <td key=>{orgData.city}, {orgData.data.state}</td>
-      //   <td key=>{orgData.deductibilityCd}</td>
-      //   <button><a href={orgData.donationUrl}>donate</a></button>
-      // </tr>
       <tr>
-        <td>org</td>
-        <td>cat</td>
-        <td>loc</td>
-        <td>deduct</td>
-        <td><button>donate</button></td>
+        <td key={orgData.ein}><a href={orgData.url}>{orgData.charityName}</a></td>
+        <td key={orgData.ein}>{orgData.category}</td>
+        <td key={orgData.ein}>{orgData.city}, {orgData.state}</td>
+        <td key={orgData.ein}>{orgData.deductibilityCd}</td>
+        <button><a href={orgData.donationUrl}>donate</a></button>
       </tr>
-
     )
   }
   render(){
@@ -36,7 +28,7 @@ class OrgList extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.organizations.map(this.renderOrgs)}
+          {this.props.organizations.map(item => item.map(this.renderOrgs))}
         </tbody>
       </table>
     )
