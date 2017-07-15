@@ -8,8 +8,10 @@ module.exports = function (app){
 	app.post("/api/login", passport.authenticate("local", function(req, res){
 		res.json ("/login");
 
+
 })
 );
+
 
 
 // Route for signing up
@@ -84,7 +86,9 @@ app.get("/api/user", function(req, res) {
 	  });
     };
   });
+
 }
+
 
 
 // // DRAFT
