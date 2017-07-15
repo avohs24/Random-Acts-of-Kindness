@@ -3,24 +3,18 @@ import { connect } from 'react-redux';
 
 //throwing an error, to be resolved after CORS issue.
 class OrgList extends Component {
-  renderOrgs(orgData){
+  //this should empty after each search
+  renderOrgs(orgData, i){
     console.log(orgData);
+    i++
     return(
-      // <tr>
-      //   <td key= ><a href={orgData.url}>{orgData.charityName}</a></td>
-      //   <td key=>{orgData.category}</td>
-      //   <td key=>{orgData.city}, {orgData.data.state}</td>
-      //   <td key=>{orgData.deductibilityCd}</td>
-      //   <button><a href={orgData.donationUrl}>donate</a></button>
-      // </tr>
-      <tr>
-        <td>org</td>
-        <td>cat</td>
-        <td>loc</td>
-        <td>deduct</td>
-        <td><button>donate</button></td>
+      <tr key={`org${i}`}>
+        <td><a href={orgData.url}>{orgData.charityName}</a></td>
+        <td>{orgData.category}</td>
+        <td>{orgData.city}, {orgData.state}</td>
+        <td>{orgData.deductibilityCd}</td>
+        <td><button><a href={orgData.donationUrl}>donate</a></button></td>
       </tr>
-
     )
   }
   render(){
@@ -36,7 +30,7 @@ class OrgList extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.organizations.map(this.renderOrgs)}
+          {this.props.organizations.map(item => item.map(this.renderOrgs))}
         </tbody>
       </table>
     )
