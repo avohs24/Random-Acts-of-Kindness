@@ -8,7 +8,7 @@ module.exports = function (app){
 	app.post("/api/login", passport.authenticate("local", function(req, res){
 		res.json ("/login");
 });
-
+};
 
 // Route for signing up
 
@@ -58,7 +58,6 @@ app.post("/api/signup", function(req, res) {
       });
     };
   });
-};
 
 // Route for getting data for profile
 app.get("/api/user", function(req, res) {
@@ -81,7 +80,7 @@ app.get("/api/user", function(req, res) {
 	  });
     };
   });
-};	
+	
 
 // // DRAFT
 
