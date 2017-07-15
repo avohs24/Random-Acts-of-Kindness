@@ -35,6 +35,7 @@ app.use(passport.session()); //persistent login sessions
 
 // -------------------------------------------------
 
+require('./routes/express.js')(app);
 
 
 // -------------------------------------------------
