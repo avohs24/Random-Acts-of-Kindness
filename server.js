@@ -16,40 +16,32 @@ var PORT = process.env.PORT || 5000;
 // Run Morgan for Logging
 app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(bodyParser.json({type: "application/vnd.api+json"}));
 
 app.use(express.static(__dirname + '/dist'))
 
-
 //For passport sessions
-app.use(session({
-  secret: 'randomactofkindness',
-  saveUninitialized: true,
-  resave: true
-}));
+app.use(session({secret: 'randomactsofkindness', saveUninitialized: true, resave: true}));
 
 app.use(passport.initialize());
 app.use(passport.session()); //persistent login sessions
 
 // -------------------------------------------------
 
-
-
 // -------------------------------------------------
 // * (get) - load HTML page (with ReactJS) in public/index.html. Make sure you put this after all other GET routes
 //redirect the user to our rendered React application
-app.get('*', function (request, response){
-  response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+app.get('*', function(request, response) {
+    response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
 })
 
 // -------------------------------------------------
 
-
 // Starting our express server
-db.sequelize.sync({ force: true }).then(function(){
-  app.listen(PORT, function() {
-    console.log("App listening on PORT: " + PORT);
-  });
+db.sequelize.sync({force: false}).then(function() {
+    app.listen(PORT, function() {
+        console.log("App listening on PORT: " + PORT);
+    });
 });
