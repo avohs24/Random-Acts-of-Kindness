@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import SearchBar from '../containers/search_bar'
-import OrgList from '../containers/orgs_list'
+import SearchBar from '../containers/search_bar';
+import OrgList from '../containers/orgs_list';
+
 
 export default class SignUp extends Component {
   render() {
@@ -17,41 +18,41 @@ export default class SignUp extends Component {
                 </div>
                 <div className="input-field col m6">
                   <input placeholder="Last Name" id="last_name" type="text" className="validate" />
-                  <label for="last_name">Last Name</label>
+                  <label htmlFor="last_name">Last Name</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col m12">
                   <input placeholder="Street Address" id="address" type="text" className="validate" />
-                  <label for="address">Street Address</label>
+                  <label htmlFor="address">Street Address</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col m4">
                   <input placeholder="City" id="city" type="text" className="validate" />
-                  <label for="city">City</label>
+                  <label htmlFor="city">City</label>
                 </div>
                 <div className="input-field col m4">
                   <input placeholder="State" id="state" type="text" className="validate" />
-                  <label for="state">State</label>
+                  <label htmlFor="state">State</label>
                 </div>
                 <div className="row">
                   <div className="input-field col m4">
                     <input placeholder="Zip Code" id="zip-code" type="text" className="validate" />
-                    <label for="zip-code">Zip Code</label>
+                    <label htmlFor="zip-code">Zip Code</label>
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col m12">
                   <input id="signuppassword" type="password" className="validate" />
-                  <label for="signuppassword">Password</label>
+                  <label htmlFor="signuppassword">Password</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col m12">
                   <input id="confirmpassword" type="password" className="validate" />
-                  <label for="confirmpassword">Confirm Password</label>
+                  <label htmlFor="confirmpassword">Confirm Password</label>
                 </div>
               </div>
               <div className="row center">
