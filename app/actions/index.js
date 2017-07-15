@@ -6,10 +6,17 @@ const ROOT_URL = `http://data.orghunter.com/v1/charitysearch?user_key=${API_KEY}
 export const FETCH_ORG = 'FETCH_ORG'
 
 export function fetchOrganization(term){
-  const url = `${ROOT_URL}&searchTerm=${term}`;
-  const request = axios.get(url);
 
-console.log('Request:', request);
+  function getOrganizations() {
+    return axios.get('/api/get-organizations/'+ term) // triggers a server side route
+      .then(function (response) {
+
+        const orgs = JSON.parse(response.data.body);
+        (console.log(orgs));
+        return orgs
+      })
+  }
+  const request = getOrganizations();
 
   return{
     type: FETCH_ORG,

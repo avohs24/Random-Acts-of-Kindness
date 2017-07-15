@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchOrganization} from '../actions/index';
+import axios from 'axios';
 
 class SearchBar extends Component {
   constructor(props){
@@ -21,6 +22,7 @@ class SearchBar extends Component {
     this.props.fetchOrganization(this.state.term);
     this.setState({term: ''});
   }
+
   render(){
     return (
       <form
@@ -33,7 +35,6 @@ class SearchBar extends Component {
           //value of this is not Component
           onChange={this.handleInput}
          />
-
         <span className='input-group-button'>
           <button className='btn btn-secondary' type='submit'>submit</button>
         </span>
