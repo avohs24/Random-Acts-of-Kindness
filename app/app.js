@@ -21,6 +21,7 @@ import DonationFail from './components/Donation_fail';
 import DonationPortal from './components/Donation_portal';
 import DonationReceipts from './components/Donation_receipts';
 import Index from './components/Index';
+import Profile from './components/Profile';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -41,6 +42,7 @@ ReactDOM.render(
         <Route path="/donation-fail" component={DonationFail} />
         <Route path="/donation-portal" component={DonationPortal} />
         <Route path="/donation-receipts" component={DonationReceipts} />
+        <Route path='/profile' component={Profile} />
       </div>
     </BrowserRouter>
   </Provider>
