@@ -6,9 +6,14 @@ export default class Organizations extends Component {
   render() {
     return (
       <div>
-        <h1>Organizations Page</h1>
+      <div className="container">
+<br />
+<div className="signupcontainer center">
+        <h1>Charity Search</h1>
         <SearchBar />
         <OrgList />
+              </div>
+</div>
       </div>
     );
   }
