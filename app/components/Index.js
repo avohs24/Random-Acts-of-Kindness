@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import SearchBar from '../containers/search_bar';
 import LogoImg from '../../public/assets/imgs/rak-logo.jpg';
 import OrgList from '../containers/orgs_list';
+import Login from './Login';
+
+function loginButton() {
+    return <Login />;
+}
 
 export default class Index extends Component {
     render() {
@@ -15,7 +20,7 @@ export default class Index extends Component {
                                 <form>
                                     Category Type: <br /><br /><input id="category" type="text" name="Category" value="" /><br /><br /><br />
                                 </form>
-                                <button id="viewcharity" className="btn waves-effect waves-light" type="submit" name="action">View Charities
+                                <button onClick={loginButton} id="viewcharity" className="btn waves-effect waves-light" type="submit" name="action">View Charities
                                     <i className="material-icons right">send</i>
                                 </button>
                             </div>
