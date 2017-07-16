@@ -9,7 +9,7 @@ export default class Organizations extends Component {
       <div className="container">
 <br />
 <div className="signupcontainer center">
-        <h1>Charity Search</h1>
+        <h3 className="headerbg">Charity Search</h3>
         <SearchBar />
         <OrgList />
               </div>
