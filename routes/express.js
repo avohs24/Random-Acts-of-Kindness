@@ -28,8 +28,6 @@ app.post("/api/signup", function(req, res) {
 		streetAddress: req.body.streetAddress,
 		state: req.body.state,
 		zip: req.body.zip
-		// Should we add email to the user model?
-      	// email: req.body.email,
     }).then(function() {
       res.redirect(200, "/api/login");
     }).catch(function(err) {
@@ -44,8 +42,7 @@ app.post("/api/signup", function(req, res) {
 	        firstName: req.body.firstName,
 	        lastName: req.body.lastName,
 	        Amount_donated: req.body.Amount_donated
-	        // Should we add email to the user model?
-	          // email: req.body.email,
+
 	    }).then(function() {
 	      res.redirect(200, "/api/login");
 	    }).catch(function(err) {
@@ -73,8 +70,7 @@ app.post("/api/signup", function(req, res) {
         id: req.user.id,
         firstName: req.receipt.firstName,
         lastName: req.receipt.lastName,
-        Amount_donated: req.receipt.Amount_donated,
-        Donated_at: req.receipt.Donated_at
+        Amount_donated: req.receipt.Amount_donated
       });
     };
   });
@@ -104,38 +100,3 @@ app.get("/api/user", function(req, res) {
   });
 
 }
-
-
-
-// // DRAFT
-
-// router.get("/User", function (req.res){
-// 	db.RAK.findAll({
-// 		inlude:[db.User],
-// 	order:[ "firstName"], ["lastName"], ["streetAddress], [state], [zipcode]
-
-// 	})
-// })
-
-// router.post ("/user", function(req, res{
-// 	db.Receipt.create ({
-
-// 	})
-// 	.then (function(dbrak)){
-// 		res.redirect ("/");
-// 	});
-// };
-
-// router.post ("/receipt", function(req, res{
-// 	db.Receipt.create ({
-// 		firstName: req.body.firstName,
-// 		lastName: req.body.lastName,
-// 		Amount_donated: req.body.Amount_donated,
-// 		Donated_at: req.body.Donated_at
-// 	})
-// 	.then (function(dbrak)){
-// 		res.redirect ("/");
-// 	});
-// };
-
-// module.exports = router;
