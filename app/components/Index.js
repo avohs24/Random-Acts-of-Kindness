@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import SearchBar from '../containers/search_bar';
 import LogoImg from '../../public/assets/imgs/rak-logo.jpg';
 import OrgList from '../containers/orgs_list';
+import {connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export default class Index extends Component {
     render() {
@@ -39,11 +41,17 @@ export default class Index extends Component {
                                      <i className="material-icons right">send</i>
                                 </button>
                             </div>
-                            <div className="col m4">
-                                <button id="signup" className="btn waves-effect waves-light" type="submit" name="action">Sign Up
+                            {/* <div className="col m4">
+                                <button id="signup" className="btn waves-effect waves-light" to='/signup'>Sign Up
                                    <i className="material-icons right">send</i>
                                 </button>
-                            </div>
+                            </div> */}
+
+                                <Link id="signup" className="btn waves-effect waves-light" to='/signup'>Sign Up
+                                   <i className="material-icons right">send</i>
+                                </Link>
+
+
                         </div>
                     </div>
                 </div>
