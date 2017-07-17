@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random Acts of Kindness</title>
+    <!--Import Google Icons and Fonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <!--Link to Materialize.CSS-->
+    <link type="text/css" rel="stylesheet" href="../app/sass/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../app/css/styles.css" media="screen,projection" />
+    <!--Import Animate.CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <!--Navigation Bar-->
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="row">
+                        <div class="col m1">
+                            <a href="index.html" class="brand-logo"><img class="smallimg" src="../public/assets/imgs/rak-logo.jpg"></a>
+                        </div>
+                        <div class="col m11">
+                            <p class="center kurale">RAK<br><span class="crimson">Random Acts of Kindness</span></p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--Main Container-->
+        <div class="container main">
+            <!--View Charities Container, by default is hidden until user clicks on View Charities-->
+            <div id="charities" class="center bodycontent animated bounceInRight">
+                <p id="charitybg" class="padding">Please select the charity you'd like to donate to below.</p>
+            </div>
+        </div><br>
+        <div class="center">
+                    <button id="charitydonate" class="btn waves-effect waves-light" type="submit" name="action">Donate
+              <i class="material-icons right">send</i>
+              </button>
+              </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../utils/js/bin/materialize.min.js"></script>
+
+</body>
+
+</html>
