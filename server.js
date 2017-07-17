@@ -33,12 +33,11 @@ app.use(passport.session()); //persistent login sessions
 
 // -------------------------------------------------
 
-<<<<<<< HEAD
+
 require('./routes/express.js')(app);
 
 
-=======
->>>>>>> master
+
 // -------------------------------------------------
 // * (get) - load HTML page (with ReactJS) in public/index.html. Make sure you put this after all other GET routes
 //redirect the user to our rendered React application
