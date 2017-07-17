@@ -43,6 +43,7 @@ class SignIn extends Component {
             <Field
               label = "Password"
               name = "password"
+              type = "password"
               htmlFor="password"
               icon = 'lock outline'
               component={this.renderField}
