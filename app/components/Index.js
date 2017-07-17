@@ -31,9 +31,6 @@ export default class Index extends Component {
                         <div id="cellular">
                             <div className="center" id="cellular-inside">
                                 <Link to='/index'><img className="smallimg" src={LogoImg} /></Link>
-                                <form>
-                                    Category Type: <br /><br /><input id="category" type="text" name="Category" value="" /><br /><br /><br />
-                                </form>
                                 <form onSubmit={this.handleSubmit}>
                                      Interest: <br /><br />
                                     <input id="category" type="text" className="Category" onChange={this.handleInput} value={this.state.term} /><br /><br /><br />
