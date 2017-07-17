@@ -1,12 +1,10 @@
 import { createBrowserHistory } from 'history';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
-
 import React from 'react';
 
 // Components
 import Login from '../components/Login';
 import Organizations from '../components/Organizations';
-import SignIn from '../components/Sign_in';
 import SignUp from '../components/Sign_up';
 import DonationCriteria from '../components/Donation_criteria';
 import Donation from '../components/Donation';
@@ -22,7 +20,6 @@ const routes = () => (
     <Switch>
       <Route path="/login" component={Login} />
       <Route path="/organizations" component={Organizations} />
-      <Route path="/signin" component={SignIn} />
       <Route path="/signup" component={SignUp} />
       <Route path="/donation-criteria" component={DonationCriteria} />
       <Route path="/donation" component={Donation} />

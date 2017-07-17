@@ -13,13 +13,13 @@ export default class Index extends Component {
                     <div className="col m4">
                         <div id="cellular">
                             <div className="center" id="cellular-inside">
-                                <a href="index.html"><img className="smallimg" src={LogoImg} /></a>
+                                <Link to='/index'><img className="smallimg" src={LogoImg} /></Link>
                                 <form>
                                     Category Type: <br /><br /><input id="category" type="text" name="Category" value="" /><br /><br /><br />
                                 </form>
-                                <button id="viewcharity" className="btn waves-effect waves-light" type="submit" name="action">View Charities
+                                <Link id="viewcharity" className="btn waves-effect waves-light" type="submit" to='/organizations'>View Charities
                                     <i className="material-icons right">send</i>
-                                </button>
+                                </Link>
                             </div>
                             <div id="homebutton">
                             </div>
@@ -37,21 +37,15 @@ export default class Index extends Component {
                         </div>
                         <div className="row center paddingtwo">
                             <div className="col m4">
-                                <button id="login" className="btn waves-effect waves-light" type="submit" name="action">Login
+                                <Link id="login" className="btn waves-effect waves-light" type="submit" to='/login'>Login
                                      <i className="material-icons right">send</i>
-                                </button>
-                            </div>
-                            {/* <div className="col m4">
-                                <button id="signup" className="btn waves-effect waves-light" to='/signup'>Sign Up
-                                   <i className="material-icons right">send</i>
-                                </button>
-                            </div> */}
-
-                                <Link id="signup" className="btn waves-effect waves-light" to='/signup'>Sign Up
-                                   <i className="material-icons right">send</i>
                                 </Link>
-
-
+                            </div>
+                            <div className="col m4">
+                              <Link id="signup" className="btn waves-effect waves-light" to='/signup'>Sign Up
+                                 <i className="material-icons right">send</i>
+                              </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -57,12 +57,12 @@ export default class SignUp extends Component {
               </div>
               <div className="row center">
                 <div className="col m6">
-                  <button id="loginsubmit" className="btn waves-effect waves-light" type="submit" name="action">Submit
+                  <button id="resetbutton" className="btn waves-effect waves-light" onclick="resetFunc" value="Reset Form" name="action">Reset
               <i className="material-icons right">send</i>
               </button>
                 </div>
                 <div className="col m6">
-                  <button id="resetbutton" className="btn waves-effect waves-light" onclick="resetFunc" value="Reset Form" name="action">Reset
+                  <button id="loginsubmit" className="btn waves-effect waves-light" type="submit" name="action">Submit
               <i className="material-icons right">send</i>
               </button>
                 </div>
