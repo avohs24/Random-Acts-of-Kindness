@@ -22,8 +22,9 @@ export function fetchOrganization(term){
   }
 }
 
-export function createUser(values){
-  const request = axios.post(`/api/signup`, values);
+export function createUser(values, callback){
+  const request = axios.post(`/api/signup`, values)
+    .then(()=>callback())
   return{
     type: CREATE_USER,
     payload: request
