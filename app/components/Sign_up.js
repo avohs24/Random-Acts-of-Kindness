@@ -18,13 +18,18 @@ class SignUp extends Component {
     )
   }
 
+  onSubmit(values){
+    console.log(values)
+  }
+
   render() {
+    const { handleSubmit } = this.props;
     return (
         <div className="container">
 
         <div id="signuppage" className="signupcontainer animated bounceInRight">
           <div className="row">
-            <form id="signupform" className="col m12">
+            <form id="signupform" className="col m12" onSubmit={handleSubmit(this.onSubmit.bind(this))}>
               <div className="row">
                 <Field
                   name='FirstName'
