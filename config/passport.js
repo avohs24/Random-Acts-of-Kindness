@@ -18,14 +18,16 @@ passport.use(new LocalStrategy(
           message: "Incorrect email."
         });
       }
-      else if(!dbuser.validPassword(password){
+
+      else if(!dbuser.validPassword(password)){
         return done(null, false, {
           message: "Incorrect password."
         });
       }
       return done(null, dbuser);
     });
-    )
+
+
   }
 ));
 

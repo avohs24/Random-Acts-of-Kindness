@@ -33,13 +33,17 @@ app.use(passport.session()); //persistent login sessions
 
 // -------------------------------------------------
 
+
+require('./routes/express.js')(app);
+
+
+
 // -------------------------------------------------
 // * (get) - load HTML page (with ReactJS) in public/index.html. Make sure you put this after all other GET routes
 //redirect the user to our rendered React application
 
-
+//server-side api call by term
 app.get('/api/get-organizations/:term', function (req, res) {
-  // '/api/get-orgnaizations' called from client
   const API_KEY = '58c5806d11fbc6c7da9b796db4f9a77c';
   const ROOT_URL = `http://data.orghunter.com/v1/charitysearch?user_key=${API_KEY}`;
   const url = `${ROOT_URL}&searchTerm=$`;
@@ -54,7 +58,24 @@ app.get('/api/get-organizations/:term', function (req, res) {
     });
   };
   orgRequest(url, query);
-})
+});
+
+//server-side api call for all orga
+app.get('/api/get-organizations', function (req, res) {
+  const API_KEY = '58c5806d11fbc6c7da9b796db4f9a77c';
+  const ROOT_URL = `http://data.orghunter.com/v1/charitysearch?user_key=${API_KEY}`;
+  const url = `${ROOT_URL}`;
+  const query = req.params.term
+  function orgRequest(endpoint){
+    request(endpoint, function (error, response, body) {
+      console.log('error:', error); // Print the error if one occurred
+      console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+      console.log('body:', body); // Print the HTML for the Google homepage.
+      res.json(response);
+    });
+  };
+  orgRequest(url);
+});
 
 app.get('*', function(request, response) {
     response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
