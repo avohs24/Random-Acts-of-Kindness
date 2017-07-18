@@ -30,7 +30,7 @@ class SignIn extends Component {
     return (
       <div id="loginpg" className=" center logincontainer animated bounceInDown">
         <div className="row">
-          <form id="loginform" className="col s12">
+          <form id="loginform" className="col m12">
             {/* TODO: only hover on underline activates form */}
             <Field
               label = "Username"
@@ -50,12 +50,12 @@ class SignIn extends Component {
               component={this.renderField}
             />
             <div className="row center">
-              <div className="col m4">
+              <div className="col m6">
                 <button id="loginsubmit" className="btn waves-effect waves-light" type="submit" name="action">Submit
                   <i className="material-icons right">send</i>
                 </button>
               </div>
-              <div className="col m4">
+              <div className="col m6">
                 <button id="resetbutton" className="btn waves-effect waves-light" onclick="resetFunc" value="Reset Form" name="action">Reset
                   <i className="material-icons right">send</i>
                 </button>

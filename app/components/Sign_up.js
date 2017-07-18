@@ -39,7 +39,7 @@ class SignUp extends Component {
                 <Field
                   name='LastName'
                   id="last_name"
-                  type="text"
+                  // type="text"
                   inputClassName="validate"
                   divClassName="input-field col m6"
                   htmlFor="last_name"
@@ -51,7 +51,7 @@ class SignUp extends Component {
                 <Field
                   name='Address'
                   id="address"
-                  type="text"
+                  // type="text"
                   inputClassName="validate"
                   divClassName="input-field col m12"
                   htmlFor="address"
@@ -63,7 +63,7 @@ class SignUp extends Component {
                 <Field
                   name='City'
                   id="city"
-                  type="text"
+                  // type="text"
                   inputClassName="validate"
                   divClassName="input-field col m4"
                   htmlFor="city"
@@ -73,7 +73,7 @@ class SignUp extends Component {
                 <Field
                   name='State'
                   id="state"
-                  type="text"
+                  // type="text"
                   inputClassName="validate"
                   divClassName="input-field col m4"
                   htmlFor="state"
@@ -84,7 +84,7 @@ class SignUp extends Component {
                   <Field
                     name='zipCode'
                     id="zip_code"
-                    type="text"
+                    // type="text"
                     inputClassName="validate"
                     divClassName="input-field col m4"
                     htmlFor="zip_code"
@@ -97,7 +97,7 @@ class SignUp extends Component {
                 <Field
                   name='signupPassword'
                   id="sign_up_password"
-                  type="text"
+                  // type="text"
                   inputClassName="validate"
                   divClassName="input-field col m12"
                   htmlFor="sign_up_password"
@@ -113,7 +113,7 @@ class SignUp extends Component {
                 <Field
                   name='confirmPassword'
                   id="confirm_password"
-                  type="text"
+                  // type="text"
                   inputClassName="validate"
                   divClassName="input-field col m12"
                   htmlFor="confirm_password"
