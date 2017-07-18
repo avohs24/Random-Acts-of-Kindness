@@ -1,59 +1,125 @@
 import React, { Component } from 'react';
 import SearchBar from '../containers/search_bar';
 import OrgList from '../containers/orgs_list';
+import {Field, reduxForm } from 'redux-form';
 
+class SignUp extends Component {
+  renderField(field){
+    return(
+        <div className={field.divClassName}>
+          <input
+            className = {field.inputClassName}
+            type = {field.type}
+            placeholder = {field.placeholder}
+            {...field.input}
+          />
+          <label htmlFor={field.htmlFor}>{field.label}</label>
+        </div>
+    )
+  }
 
-export default class SignUp extends Component {
   render() {
     return (
-            <div className="container">
+        <div className="container">
 
         <div id="signuppage" className="signupcontainer animated bounceInRight">
           <div className="row">
             <form id="signupform" className="col m12">
               <div className="row">
-                <div className="input-field col m6">
-                  <input placeholder="First Name" id="first_name" type="text" className="validate" />
-                  <label for="first_name">First Name</label>
-                </div>
-                <div className="input-field col m6">
-                  <input placeholder="Last Name" id="last_name" type="text" className="validate" />
-                  <label htmlFor="last_name">Last Name</label>
-                </div>
+                <Field
+                  name='FirstName'
+                  id="first_name"
+                  // type="text"
+                  inputClassName="validate"
+                  divClassName="input-field col m6"
+                  htmlFor="first_name"
+                  label="First Name"
+                  component={this.renderField}
+                />
+                <Field
+                  name='LastName'
+                  id="last_name"
+                  type="text"
+                  inputClassName="validate"
+                  divClassName="input-field col m6"
+                  htmlFor="last_name"
+                  label="Last Name"
+                  component={this.renderField}
+                />
               </div>
               <div className="row">
-                <div className="input-field col m12">
-                  <input placeholder="Street Address" id="address" type="text" className="validate" />
-                  <label htmlFor="address">Street Address</label>
-                </div>
+                <Field
+                  name='Address'
+                  id="address"
+                  type="text"
+                  inputClassName="validate"
+                  divClassName="input-field col m12"
+                  htmlFor="address"
+                  label="Adress"
+                  component={this.renderField}
+                />
               </div>
               <div className="row">
-                <div className="input-field col m4">
-                  <input placeholder="City" id="city" type="text" className="validate" />
-                  <label htmlFor="city">City</label>
-                </div>
-                <div className="input-field col m4">
-                  <input placeholder="State" id="state" type="text" className="validate" />
-                  <label htmlFor="state">State</label>
-                </div>
+                <Field
+                  name='City'
+                  id="city"
+                  type="text"
+                  inputClassName="validate"
+                  divClassName="input-field col m4"
+                  htmlFor="city"
+                  label="City"
+                  component={this.renderField}
+                />
+                <Field
+                  name='State'
+                  id="state"
+                  type="text"
+                  inputClassName="validate"
+                  divClassName="input-field col m4"
+                  htmlFor="state"
+                  label="state"
+                  component={this.renderField}
+                />
                 <div className="row">
-                  <div className="input-field col m4">
-                    <input placeholder="Zip Code" id="zip-code" type="text" className="validate" />
-                    <label htmlFor="zip-code">Zip Code</label>
-                  </div>
+                  <Field
+                    name='zipCode'
+                    id="zip_code"
+                    type="text"
+                    inputClassName="validate"
+                    divClassName="input-field col m4"
+                    htmlFor="zip_code"
+                    label="Zip Code"
+                    component={this.renderField}
+                  />
                 </div>
               </div>
               <div className="row">
-                <div className="input-field col m12">
-                  <input id="signuppassword" type="password" className="validate" />
-                  <label htmlFor="signuppassword">Password</label>
-                </div>
+                <Field
+                  name='signupPassword'
+                  id="sign_up_password"
+                  type="text"
+                  inputClassName="validate"
+                  divClassName="input-field col m12"
+                  htmlFor="sign_up_password"
+                  label="Signup Password"
+                  component={this.renderField}
+                />
               </div>
               <div className="row">
-                <div className="input-field col m12">
+                {/* <div className="input-field col m12">
                   <input id="confirmpassword" type="password" className="validate" />
                   <label htmlFor="confirmpassword">Confirm Password</label>
-                </div>
+                </div> */}
+                <Field
+                  name='confirmPassword'
+                  id="confirm_password"
+                  type="text"
+                  inputClassName="validate"
+                  divClassName="input-field col m12"
+                  htmlFor="confirm_password"
+                  label="Confirm Password"
+                  component={this.renderField}
+                />
               </div>
               <div className="row center">
                 <div className="col m6">
@@ -74,3 +140,7 @@ export default class SignUp extends Component {
     );
   }
 }
+
+export default reduxForm({
+  form: 'PostNewUser'
+})(SignUp);

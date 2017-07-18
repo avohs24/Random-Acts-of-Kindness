@@ -36,6 +36,7 @@ class SignIn extends Component {
               label = "Username"
               name = "username"
               icon = 'person'
+              // type = 'text'
               htmlFor="icon_prefix2"
               className = 'validate'
               component={this.renderField}
