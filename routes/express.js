@@ -20,20 +20,24 @@ app.post("/api/signup", function(req, res) {
     console.log(req.body);
     db.User.create({
 		id: req.body.id,
-		firstName: req.body.firstName,
-		lastName: req.body.lastName,
+		firstName: req.body.FirstName,
+		lastName: req.body.LastName,
 		username: req.body.username,
-		password: req.body.password,
+		password: req.body.signupPassword,
 		creditCard: req.body.creditCard,
-		streetAddress: req.body.streetAddress,
-		state: req.body.state,
-		zip: req.body.zip
+		streetAddress: req.body.Address,
+		state: req.body.State,
+		zip: req.body.zipCode
     }).then(function() {
       res.redirect(200, "/api/login");
     }).catch(function(err) {
       res.json(err);
     });
   });
+
+app.get("/api/signup", function(req, res){
+	res.json();
+});
 
 	app.post("/api/receipt", function(req, res) {
 	    console.log(req.body);
