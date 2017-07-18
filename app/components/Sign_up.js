@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import SearchBar from '../containers/search_bar';
 import OrgList from '../containers/orgs_list';
 import {Field, reduxForm } from 'redux-form';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux'
+import {createUser} from '../actions';
 
 class SignUp extends Component {
   renderField(field){
@@ -19,7 +22,10 @@ class SignUp extends Component {
   }
 
   onSubmit(values){
-    console.log(values)
+    //call action creator to post to api route
+    //TODO: see that data being sent by form matches post api route
+    //TODO: implement front-end validation to make sure that data is clean b4 being posted (avoid Sequelize errors in console and gracefully fail)
+    this.props.createUser(values);
   }
 
   render() {
@@ -102,7 +108,7 @@ class SignUp extends Component {
                 <Field
                   name='signupPassword'
                   id="sign_up_password"
-                  type="text"
+                  type="password"
                   inputClassName="validate"
                   divClassName="input-field col m12"
                   htmlFor="sign_up_password"
@@ -118,7 +124,7 @@ class SignUp extends Component {
                 <Field
                   name='confirmPassword'
                   id="confirm_password"
-                  type="text"
+                  type="password"
                   inputClassName="validate"
                   divClassName="input-field col m12"
                   htmlFor="confirm_password"
@@ -128,9 +134,9 @@ class SignUp extends Component {
               </div>
               <div className="row center">
                 <div className="col m6">
-                  <button id="resetbutton" className="btn waves-effect waves-light" onclick="resetFunc" value="Reset Form" name="action">Reset
+                  <Link to="/signup" id="resetbutton" className="btn waves-effect waves-light"  value="Reset Form">Reset
               <i className="material-icons right">send</i>
-              </button>
+            </Link>
                 </div>
                 <div className="col m6">
                   <button id="loginsubmit" className="btn waves-effect waves-light" type="submit" name="action">Submit
@@ -148,4 +154,6 @@ class SignUp extends Component {
 
 export default reduxForm({
   form: 'PostNewUser'
-})(SignUp);
+})(
+    connect(null,{ createUser })(SignUp)
+);
