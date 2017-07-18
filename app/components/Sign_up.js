@@ -1,39 +1,34 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import SearchBar from '../containers/search_bar';
 import OrgList from '../containers/orgs_list';
-import {Field, reduxForm } from 'redux-form';
+import {Field, reduxForm} from 'redux-form';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux'
 import {createUser} from '../actions';
 
 class SignUp extends Component {
-  renderField(field){
-    return(
-        <div className={field.divClassName}>
-          <input
-            className = {field.inputClassName}
-            type = {field.type}
-            placeholder = {field.placeholder}
-            {...field.input}
-          />
-          <label htmlFor={field.htmlFor}>{field.label}</label>
-        </div>
+  renderField(field) {
+    return (
+      <div className={field.divClassName}>
+        <input className={field.inputClassName} type={field.type} placeholder={field.placeholder} {...field.input}/>
+        <label htmlFor={field.htmlFor}>{field.label}</label>
+      </div>
     )
   }
 
-  onSubmit(values){
+  onSubmit(values) {
     //call action creator to post to api route
     //TODO: see that data being sent by form matches post api route
     //TODO: implement front-end validation to make sure that data is clean b4 being posted (avoid Sequelize errors in console and gracefully fail)
-    this.props.createUser(values, ()=>{
-      this.props.history.push('/');
+    this.props.createUser(values, () => {
+      this.props.history.push('/donation-success');
     });
   }
 
   render() {
-    const { handleSubmit } = this.props;
+    const {handleSubmit} = this.props;
     return (
-        <div className="container">
+      <div className="container">
 
         <div id="signuppage" className="signupcontainer animated bounceInRight">
           <div className="row">
@@ -47,8 +42,7 @@ class SignUp extends Component {
                   divClassName="input-field col m6"
                   htmlFor="first_name"
                   label="First Name"
-                  component={this.renderField}
-                />
+                  component={this.renderField}/>
                 <Field
                   name='LastName'
                   id="last_name"
@@ -57,93 +51,34 @@ class SignUp extends Component {
                   divClassName="input-field col m6"
                   htmlFor="last_name"
                   label="Last Name"
-                  component={this.renderField}
-                />
+                  component={this.renderField}/>
               </div>
               <div className="row">
-                <Field
-                  name='Address'
-                  id="address"
-                  type="text"
-                  inputClassName="validate"
-                  divClassName="input-field col m12"
-                  htmlFor="address"
-                  label="Adress"
-                  component={this.renderField}
-                />
+                <Field name='Address' id="address" type="text" inputClassName="validate" divClassName="input-field col m12" htmlFor="address" label="Adress" component={this.renderField}/>
               </div>
               <div className="row">
-                <Field
-                  name='City'
-                  id="city"
-                  type="text"
-                  inputClassName="validate"
-                  divClassName="input-field col m4"
-                  htmlFor="city"
-                  label="City"
-                  component={this.renderField}
-                />
-                <Field
-                  name='State'
-                  id="state"
-                  type="text"
-                  inputClassName="validate"
-                  divClassName="input-field col m4"
-                  htmlFor="state"
-                  label="state"
-                  component={this.renderField}
-                />
+                <Field name='City' id="city" type="text" inputClassName="validate" divClassName="input-field col m4" htmlFor="city" label="City" component={this.renderField}/>
+                <Field name='State' id="state" type="text" inputClassName="validate" divClassName="input-field col m4" htmlFor="state" label="state" component={this.renderField}/>
                 <div className="row">
-                  <Field
-                    name='zipCode'
-                    id="zip_code"
-                    type="text"
-                    inputClassName="validate"
-                    divClassName="input-field col m4"
-                    htmlFor="zip_code"
-                    label="Zip Code"
-                    component={this.renderField}
-                  />
+                  <Field name='zipCode' id="zip_code" type="text" inputClassName="validate" divClassName="input-field col m4" htmlFor="zip_code" label="Zip Code" component={this.renderField}/>
                 </div>
               </div>
               <div className="row">
-                <Field
-                  name='signupPassword'
-                  id="sign_up_password"
-                  type="password"
-                  inputClassName="validate"
-                  divClassName="input-field col m12"
-                  htmlFor="sign_up_password"
-                  label="Signup Password"
-                  component={this.renderField}
-                />
+                <Field name='signupPassword' id="sign_up_password" type="password" inputClassName="validate" divClassName="input-field col m12" htmlFor="sign_up_password" label="Signup Password" component={this.renderField}/>
               </div>
               <div className="row">
-                {/* <div className="input-field col m12">
-                  <input id="confirmpassword" type="password" className="validate" />
-                  <label htmlFor="confirmpassword">Confirm Password</label>
-                </div> */}
-                <Field
-                  name='confirmPassword'
-                  id="confirm_password"
-                  type="password"
-                  inputClassName="validate"
-                  divClassName="input-field col m12"
-                  htmlFor="confirm_password"
-                  label="Confirm Password"
-                  component={this.renderField}
-                />
+                <Field name='confirmPassword' id="confirm_password" type="password" inputClassName="validate" divClassName="input-field col m12" htmlFor="confirm_password" label="Confirm Password" component={this.renderField}/>
               </div>
               <div className="row center">
                 <div className="col m6">
-                  <Link to="/signup" id="resetbutton" className="btn waves-effect waves-light"  value="Reset Form">Reset
-              <i className="material-icons right">send</i>
-            </Link>
+                  <Link to="/signup" id="resetbutton" className="btn waves-effect waves-light" value="Reset Form">Reset
+                    <i className="material-icons right">send</i>
+                  </Link>
                 </div>
                 <div className="col m6">
                   <button id="loginsubmit" className="btn waves-effect waves-light" type="submit" name="action">Submit
-              <i className="material-icons right">send</i>
-              </button>
+                    <i className="material-icons right">send</i>
+                  </button>
                 </div>
               </div>
             </form>
@@ -154,8 +89,4 @@ class SignUp extends Component {
   }
 }
 
-export default reduxForm({
-  form: 'PostNewUser'
-})(
-    connect(null,{ createUser })(SignUp)
-);
+export default reduxForm({form: 'PostNewUser'})(connect(null, {createUser})(SignUp));
