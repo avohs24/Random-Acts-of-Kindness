@@ -103,8 +103,8 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   color: #fff; }
 
 #aboutus {
-  width: 600px;
-  height: 250px;
+  width: 80%;
+  height: 100%;
   background-color: #fff;
   margin-top: 90px; }
 
