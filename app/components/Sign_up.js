@@ -37,7 +37,7 @@ class SignUp extends Component {
                 <Field
                   name='FirstName'
                   id="first_name"
-                  // type="text"
+                  type="text"
                   inputClassName="validate"
                   divClassName="input-field col m6"
                   htmlFor="first_name"

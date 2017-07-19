@@ -9,12 +9,19 @@ body {
   color: #000; }
 
 .smallimg {
-  width: 95px;
-  height: 75px; }
+  width: 15%;
+  height: 15%; }
+  @media screen and (max-width: 1000px) {
+    .smallimg {
+      float: left; } }
+  @media screen and (max-width: 860px) {
+    .smallimg {
+      display: none;
+      visibility: hidden; } }
 
 #profileimg {
-  width: 95px;
-  height: 75px;
+  width: 15%;
+  height: 15%;
   border: 2px solid #999;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -91,10 +98,6 @@ p {
 .padding {
   padding-bottom: 10px; }
 
-input[type=text]:not(.browser-default) {
-  width: 70%;
-  height: 1.5em; }
-
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
   background-color: #26A69A;
   color: #fff; }
@@ -161,3 +164,12 @@ textarea.materialize-textarea {
 
 a {
   color: #000; }
+
+.btncolor1 {
+  background-color: #A10862; }
+
+.btncolor2 {
+  background-color: #2E86C1; }
+
+.btncolor3 {
+  background-color: #F4D03F; }
