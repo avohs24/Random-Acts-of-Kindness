@@ -7,12 +7,8 @@ module.exports = function (app){
 
 	app.post("/api/login", passport.authenticate("local", function(req, res){
 		res.json ("/login");
-
-
 })
 );
-
-
 
 // Route for signing up
 
@@ -34,10 +30,6 @@ app.post("/api/signup", function(req, res) {
       res.json(err);
     });
   });
-
-app.get("/api/signup", function(req, res){
-	res.json();
-});
 
 	app.post("/api/receipt", function(req, res) {
 	    console.log(req.body);
