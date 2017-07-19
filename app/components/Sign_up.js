@@ -54,8 +54,17 @@ class SignUp extends Component {
                   component={this.renderField}/>
               </div>
               <div className="row">
-                <Field name='Address' id="address" type="text" inputClassName="validate" divClassName="input-field col m12" htmlFor="address" label="Adress" component={this.renderField}/>
-                <Field
+                <Field name='Address' id="address" type="text" inputClassName="validate" divClassName="input-field col m12" htmlFor="address" label="Address" component={this.renderField}/>
+              </div>
+              <div className="row">
+                <Field name='City' id="city" type="text" inputClassName="validate" divClassName="input-field col m4" htmlFor="city" label="City" component={this.renderField}/>
+                <Field name='State' id="state" type="text" inputClassName="validate" divClassName="input-field col m4" htmlFor="state" label="State" component={this.renderField}/>
+                <div className="row">
+                  <Field name='zipCode' id="zip_code" type="text" inputClassName="validate" divClassName="input-field col m4" htmlFor="zip_code" label="Zip Code" component={this.renderField}/>
+                </div>
+              </div>
+              <div className="row">
+                              <Field
                   name='username'
                   id="username"
                   type="text"
@@ -64,15 +73,6 @@ class SignUp extends Component {
                   htmlFor="username"
                   label="Username"
                   component={this.renderField}/>
-              </div>
-              <div className="row">
-                <Field name='City' id="city" type="text" inputClassName="validate" divClassName="input-field col m4" htmlFor="city" label="City" component={this.renderField}/>
-                <Field name='State' id="state" type="text" inputClassName="validate" divClassName="input-field col m4" htmlFor="state" label="state" component={this.renderField}/>
-                <div className="row">
-                  <Field name='zipCode' id="zip_code" type="text" inputClassName="validate" divClassName="input-field col m4" htmlFor="zip_code" label="Zip Code" component={this.renderField}/>
-                </div>
-              </div>
-              <div className="row">
                 <Field name='signupPassword' id="sign_up_password" type="password" inputClassName="validate" divClassName="input-field col m12" htmlFor="sign_up_password" label="Signup Password" component={this.renderField}/>
               </div>
               <div className="row">
