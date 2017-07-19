@@ -91,10 +91,6 @@ p {
 .padding {
   padding-bottom: 10px; }
 
-input[type=text]:not(.browser-default) {
-  width: 70%;
-  height: 1.5em; }
-
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
   background-color: #26A69A;
   color: #fff; }

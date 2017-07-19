@@ -116,11 +116,10 @@ p {
     padding-bottom: 10px;
 }
 
-input[type=text]:not(.browser-default) {
-    width: 70%;
-    // border: 1px solid #000;
-    height: 1.5em;
-}
+// input[type=text]:not(.browser-default) {
+//     // border: 1px solid #000;
+//     height: 1.5em;
+// }
 
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
     background-color: $bluecolor;   
