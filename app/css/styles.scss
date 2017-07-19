@@ -1,6 +1,8 @@
 $maincolor:  #000;
-$smallwidth: 95px;
-$smallheight: 75px;
+$smallwidth: 15%;
+$smallheight: 15%;
+$largebreak: 1000px;
+$smallbreak: 860px;
 $bgmaincolor: #fff;
 $bluecolor: #26A69A;
 $largefont: 30px;
@@ -33,6 +35,13 @@ body {
 .smallimg {
     width: $smallwidth;
     height: $smallheight;
+    @media screen and (max-width: $largebreak) {
+        float: left;
+    }
+    @media screen and (max-width: $smallbreak) {
+        display: none;
+        visibility: hidden;
+    }
 }
 
 #profileimg {
@@ -198,4 +207,16 @@ textarea.materialize-textarea {
 
 a {
     color: #000;
+}
+
+.btncolor1 {
+    background-color: #A10862;
+}
+
+.btncolor2 {
+    background-color: #2E86C1;
+}
+
+.btncolor3 {
+    background-color: #F4D03F;
 }
