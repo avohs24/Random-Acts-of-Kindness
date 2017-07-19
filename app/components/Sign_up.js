@@ -37,7 +37,7 @@ class SignUp extends Component {
                 <Field
                   name='FirstName'
                   id="first_name"
-                  // type="text"
+                  type="text"
                   inputClassName="validate"
                   divClassName="input-field col m6"
                   htmlFor="first_name"
@@ -55,6 +55,15 @@ class SignUp extends Component {
               </div>
               <div className="row">
                 <Field name='Address' id="address" type="text" inputClassName="validate" divClassName="input-field col m12" htmlFor="address" label="Adress" component={this.renderField}/>
+                <Field
+                  name='username'
+                  id="username"
+                  type="text"
+                  inputClassName="validate"
+                  divClassName="input-field col m6"
+                  htmlFor="username"
+                  label="Username"
+                  component={this.renderField}/>
               </div>
               <div className="row">
                 <Field name='City' id="city" type="text" inputClassName="validate" divClassName="input-field col m4" htmlFor="city" label="City" component={this.renderField}/>
@@ -76,7 +85,7 @@ class SignUp extends Component {
                   </Link>
                 </div>
                 <div className="col m6">
-                  <button id="loginsubmit" className="btn waves-effect waves-light" type="submit" name="action">Submit
+                  <button id="loginsubmit" className="btn waves-effect waves-light" type="submit" name="action" method='POST'>Submit
                     <i className="material-icons right">send</i>
                   </button>
                 </div>
