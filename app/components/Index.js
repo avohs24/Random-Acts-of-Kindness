@@ -27,7 +27,7 @@ export default class Index extends Component {
         return (
             <div className="container main">
                 <div className="row">
-                    <div className="col m4">
+                    <div className="col s12 m5">
                         <div id="cellular">
                             <div className="center" id="cellular-inside">
                                 <Link to='/index'><img className="smallimg" src={LogoImg} /></Link>
@@ -43,7 +43,7 @@ export default class Index extends Component {
                             </div>
                         </div>
                         </div>
-                    <div className="col m8">
+                    <div className="col s12 m7">
                         <div id="aboutus">
                             <h2>What Is RAK?</h2>
                             <p className="padding">Random Acts of Kindness (RAK) is an organization that allows you the user,

@@ -14,7 +14,7 @@ body {
   @media screen and (max-width: 1000px) {
     .smallimg {
       float: left; } }
-  @media screen and (max-width: 860px) {
+  @media screen and (max-width: 850px) {
     .smallimg {
       display: none;
       visibility: hidden; } }
