@@ -1,8 +1,8 @@
 $maincolor:  #000;
 $smallwidth: 15%;
-$smallheight: 15%;
+$smallheight: 10%;
 $largebreak: 1000px;
-$smallbreak: 860px;
+$smallbreak: 850px;
 $bgmaincolor: #fff;
 $bluecolor: #26A69A;
 $largefont: 30px;
@@ -136,8 +136,8 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 #aboutus {
-    width: 600px;
-    height: 250px;
+    width: 80%;
+    height: 100%;
     background-color: $white;
     margin-top: 90px;
 }
@@ -208,15 +208,25 @@ textarea.materialize-textarea {
 a {
     color: #000;
 }
-
-.btncolor1 {
-    background-color: #A10862;
+.dollar::before {
+    content: "$";
+    padding: 0 5px;
+    text-align: center;
 }
 
-.btncolor2 {
-    background-color: #2E86C1;
+.arima {
+    font-family: 'Arima Madurai';
+    font-size: 32px;
 }
 
-.btncolor3 {
-    background-color: #F4D03F;
+.textcolor1 {
+    color: #A60461;
+}
+
+.textcolor2 {
+    color: #584477;
+}
+
+.textcolor3 {
+    color: #2C6485;
 }
