@@ -27,7 +27,7 @@ export default class Index extends Component {
         return (
             <div className="container main">
                 <div className="row">
-                    <div className="col m4">
+                    <div className="col s12 m5">
                         <div id="cellular">
                             <div className="center" id="cellular-inside">
                                 <Link to='/index'><img className="smallimg" src={LogoImg} /></Link>
@@ -43,15 +43,18 @@ export default class Index extends Component {
                             </div>
                         </div>
                         </div>
-                    <div className="col m8">
+                    <div className="col s12 m7">
                         <div id="aboutus">
                             <h2>What Is RAK?</h2>
-                            <p className="padding">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-                            make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-                            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-                            of Lorem Ipsum.</p>
+                            <p className="padding">Random Acts of Kindness (RAK) is an organization that allows you the user,
+                            to contribute to a random organization of your choice. You can think of us as a gatekeeper who ensures 
+                            that your funds go to the right people. We know that given the quantity of organizations that are in need
+                            of your help, it can be difficult to choose one. This is where RAK comes in to help you decide. We collect
+                            the categories that you're interested in donating to and randomly select one for you. This takes the guesswork,
+                            pressure, and indecisiveness out of the equation. If you're ready to donate, we need you to sign up
+                            first by clicking on the sign up button. Once you're signed in, you can get started on your 
+                            philanthropist journey. Thank you for your time and consideration into promoting a good cause.
+                            </p>
                         </div>
                         <div className="row center paddingtwo">
                             <div className="col m4">

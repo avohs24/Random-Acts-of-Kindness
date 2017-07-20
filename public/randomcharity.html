@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RAK - All Charities</title>
+    <!--Import Google Icons and Fonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <!--Link to Materialize.CSS-->
+    <link type="text/css" rel="stylesheet" href="../app/sass/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../app/css/styles.css" media="screen,projection" />
+    <!--Import Animate.CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <!--Navigation Bar-->
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                    <div class="row">
+                        <div class="col m1">
+                            <a href="index.html" class="brand-logo"><img class="smallimg" src="../public/assets/imgs/rak-logo.jpg"></a>
+                        </div>
+                        <div class="col m11">
+                            <p class="center kurale">RAK<br><span class="crimson">Random Acts of Kindness</span></p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!--Random Charity List Container-->
+        <div class="container" id="profile">
+            <h2 class="center headerbg padding">Random Charity Generator</h2>
+            <p class="padding">We at <b>Random Acts of Kindness (RAK) </b>would like to thank you in advance for your generosity. You have a
+                heart to give to a greater cause to produce an even better outcome. Please follow the instructions below
+                to get started:
+                <ol>
+                    <li>Select the categories that you're most interested in donating to.</li>
+                    <li>Insert the amount you'd like to donate.</li>
+                    <li>Click Donate.</li>
+                </ol>
+                <p class="padding">
+                    After you've followed these steps, a charity will be displayed based on your interest on the next screen.
+                </p>
+            </p>
+            <!--Charity Categories-->
+            <form action="#">
+                <div class="row padding center">
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="wildlife" />
+                            <label for="wildlife">Wild Life</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="cancer" />
+                            <label for="cancer">Cancer</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="veterans" />
+                            <label for="veterans">Veterans</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="leukemia" />
+                            <label for="leukemia">Leukemia</label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding center">
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="children" />
+                            <label for="children">Children</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="environment" />
+                            <label for="environment">Environment</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="disaster" />
+                            <label for="disaster">Disaster</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="education" />
+                            <label for="education">Education</label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding center">
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="arts" />
+                            <label for="arts">Performing Arts</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="international" />
+                            <label for="international">International</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="society" />
+                            <label for="society">Society</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="religion" />
+                            <label for="religion">Religion</label>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding center">
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="welfare" />
+                            <label for="welfare">Welfare</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="civil" />
+                            <label for="civil">Civil Rights</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="abuse" />
+                            <label for="abuse">Abuse</label>
+                        </p>
+                    </div>
+                    <div class="col m3">
+                        <p>
+                            <input type="checkbox" id="homeless" />
+                            <label for="homeless">Homeless</label>
+                        </p>
+                    </div>
+                    <div class="row center">
+                        <div class="input-field col m12">
+                            <p class="padding center">Please enter the amount you'd like to contribute.</p>
+                            <input id="dollar-sign" type="text" class="center validate" placeholder="$ 0.00">
+                        </div>
+                    </div>
+            </form>
+            </div>
+
+        </div><br>
+        <div class="center">
+            <button id="charitydonate" class="btn waves-effect waves-light" type="submit" name="action">Donate
+              <i class="material-icons right">send</i>
+              </button>
+        </div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../utils/js/bin/materialize.min.js"></script>
+
+<script>
+$("#dollar-sign").bind('change',function () { 
+     $(this).val(function(i, v) { 
+         return parseInt(v).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'); 
+        });
+});
+    </script>
+
+
+</body>
+
+</html>

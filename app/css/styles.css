@@ -9,12 +9,19 @@ body {
   color: #000; }
 
 .smallimg {
-  width: 95px;
-  height: 75px; }
+  width: 15%;
+  height: 10%; }
+  @media screen and (max-width: 1000px) {
+    .smallimg {
+      float: left; } }
+  @media screen and (max-width: 850px) {
+    .smallimg {
+      display: none;
+      visibility: hidden; } }
 
 #profileimg {
-  width: 95px;
-  height: 75px;
+  width: 15%;
+  height: 10%;
   border: 2px solid #999;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -91,17 +98,13 @@ p {
 .padding {
   padding-bottom: 10px; }
 
-input[type=text]:not(.browser-default) {
-  width: 70%;
-  height: 1.5em; }
-
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
   background-color: #26A69A;
   color: #fff; }
 
 #aboutus {
-  width: 600px;
-  height: 250px;
+  width: 80%;
+  height: 100%;
   background-color: #fff;
   margin-top: 90px; }
 
@@ -161,3 +164,21 @@ textarea.materialize-textarea {
 
 a {
   color: #000; }
+
+.dollar::before {
+  content: "$";
+  padding: 0 5px;
+  text-align: center; }
+
+.arima {
+  font-family: 'Arima Madurai';
+  font-size: 32px; }
+
+.textcolor1 {
+  color: #A60461; }
+
+.textcolor2 {
+  color: #584477; }
+
+.textcolor3 {
+  color: #2C6485; }
