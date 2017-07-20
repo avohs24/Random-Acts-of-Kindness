@@ -15,7 +15,7 @@ export default class Main extends Component {
                 <a href="#" className="brand-logo"><img className="smallimg" src={LogoImg}/></a>
               </div>
               <div className="col m11">
-                <p className="center kurale">RAK<br/><span className="crimson">Random Acts of Kindness</span></p>
+                <p className="center arima"><span className="textcolor3">R</span>andom<span className="textcolor1">&nbsp;A</span>cts&nbsp;of&nbsp;<span className="textcolor2">K</span>indness<br/></p>
               </div>
             </div>
           </div>
