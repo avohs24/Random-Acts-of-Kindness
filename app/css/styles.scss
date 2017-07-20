@@ -140,6 +140,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     height: 100%;
     background-color: $white;
     margin-top: 90px;
+    @include border-radius(3px);
 }
 
 h2 {
@@ -174,6 +175,7 @@ h2 {
     box-shadow: 5px 5px 15px #000;
     padding: 15px;
     color: $bluecolor;
+    @include border-radius(3px);
 }
 
 .headerbg {
@@ -189,6 +191,7 @@ h2 {
     background-color: $white;
     box-shadow: 5px 5px 15px #000;
     padding: 15px;
+    @include border-radius(3px);
 }
 
 textarea.materialize-textarea {
