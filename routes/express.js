@@ -6,7 +6,8 @@ var passport = require ("../config/passport.js")
 module.exports = function (app){
 
 	app.post("/api/login", passport.authenticate("local", function(req, res){
-		res.json ("/login");
+		// res.json ("/login");
+		res.json(req.body);
 })
 );
 
