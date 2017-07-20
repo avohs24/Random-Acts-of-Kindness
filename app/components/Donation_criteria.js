@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import SearchBar from '../containers/search_bar';
 import OrgList from '../containers/orgs_list';
 import {Field, reduxForm } from 'redux-form';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux'
+import {generateDonation} from '../actions';
 
 
 export default class Criteria extends Component {
