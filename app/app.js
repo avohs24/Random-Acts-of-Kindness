@@ -8,6 +8,8 @@ import reducers from './reducers';
 import Materialize from 'materialize-css';
 import Css from './css/styles.css';
 import Main from './components/Main';
+import {Button, Icon, SideNav, SideNavItem} from 'react-materialize';
+
 
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
