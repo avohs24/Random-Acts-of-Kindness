@@ -20,9 +20,10 @@ class Criteria extends Component {
   }
 
   onSubmit(values) {
-    console.log('submit');
     //TODO: implement front-end validation to make sure that data is clean b4 being posted (avoid Sequelize errors in console and gracefully fail)
-    this.props.generateDonation(values);
+    this.props.generateDonation(values, () => {
+      this.props.history.push('/donation');
+    });
   }
 
   render() {
@@ -151,16 +152,23 @@ class Criteria extends Component {
           <div className="row center">
             <div className="input-field col m12">
               <p className="padding center">Please enter the amount you'd like to contribute.</p>
-              <input id="dollar-sign" type="text" className="center validate" placeholder="$ 0.00" />
+              <Field
+                name="donation-amount"
+                component="input"
+                type="text"
+                placeholder="0.00"
+                id="dollar-sign"
+                className="center validate"
+                />
             </div>
           </div>
-        </form>
         <br />
         <div className="center">
           <button id="charitydonate" className="btn waves-effect waves-light" type="submit" name="action">Donate
               <i className="material-icons right">send</i>
           </button>
         </div>
+        </form>
       </div>
     );
   }

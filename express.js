@@ -7,10 +7,12 @@ module.exports = function(app, rp){
 	app.get("/", function(req, res){
 
 	});
-	app.get('/user', function (req,res){
-		res.json
-	})
 
+app.get('/user', function (req,res){
+	db.Users.findAll({}).then((user) => {
+      res.json(user);
+    });
+})
 }
 
 
