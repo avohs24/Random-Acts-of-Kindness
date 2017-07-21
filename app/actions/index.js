@@ -6,6 +6,7 @@ const ROOT_URL = `http://data.orghunter.com/v1/charitysearch?user_key=${API_KEY}
 export const FETCH_ORG = 'FETCH_ORG';
 export const CREATE_USER = 'CREATE_USER';
 export const LOGIN_USER = 'LOGIN_USER';
+export const GENERATE_DONATION = 'GENERATE_DONATION';
 
 export function fetchOrganization(term){
 
@@ -37,6 +38,14 @@ export function loginUser(values, callback){
     .then(()=>callback())
   return{
     type: LOGIN_USER,
+    payload: request
+  }
+}
+
+export function generateDonation(values){
+  console.log('generateDonation');
+  return{
+    type: GENERATE_DONATION,
     payload: request
   }
 }
