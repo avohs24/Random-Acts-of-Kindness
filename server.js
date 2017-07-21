@@ -9,6 +9,9 @@ var path = require('path');
 var db = require("./models");
 var cors = require('cors')
 var request = require('request');
+var flash = require('express-flash');
+var rp = require('request-promise');
+
 
 // Create a new express app
 var app = express();
@@ -29,12 +32,13 @@ app.use(express.static(__dirname + '/dist'));
 app.use(session({secret: 'randomactsofkindness'}));
 app.use(passport.initialize());
 app.use(passport.session()); //persistent login sessions
-
+app.use(flash());
 
 // -------------------------------------------------
 
 
-require('./routes/express.js')(app);
+require('./routes/express.js')(app, rp);
+require('./config/passport.js')(app, passport);
 
 
 
