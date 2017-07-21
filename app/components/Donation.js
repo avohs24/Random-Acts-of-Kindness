@@ -3,7 +3,6 @@ import SearchBar from '../containers/search_bar';
 import OrgList from '../containers/orgs_list';
 import LogoImg from '../../public/assets/imgs/rak-logo.jpg';
 
-
 export default class Donation extends Component {
   render() {
     return (
