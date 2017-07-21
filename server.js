@@ -23,13 +23,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type: "application/vnd.api+json"}));
 
-app.use(express.static(__dirname + '/dist'))
+app.use(express.static(__dirname + '/dist'));
 
 //For passport sessions
-app.use(session({secret: 'randomactsofkindness', saveUninitialized: true, resave: true}));
-
+app.use(session({secret: 'randomactsofkindness'}));
 app.use(passport.initialize());
 app.use(passport.session()); //persistent login sessions
+
 
 // -------------------------------------------------
 

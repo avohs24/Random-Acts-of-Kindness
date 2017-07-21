@@ -33,7 +33,7 @@ export function createUser(values, callback){
 }
 
 export function loginUser(values, callback){
-  const request = axios.post(`/api/login`, values)
+  const request = axios.post(`/login`, values)
     .then(()=>callback())
   return{
     type: LOGIN_USER,
