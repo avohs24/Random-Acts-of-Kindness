@@ -9,65 +9,49 @@ export const CREATE_USER = 'CREATE_USER';
 export const LOGIN_USER = 'LOGIN_USER';
 export const GENERATE_DONATION = 'GENERATE_DONATION';
 
-export function Donation(criteria, donation_amount){
+export function Donation(criteria, donation_amount) {
   this.criteria = criteria;
   this.donation_amount = donation_amount;
 }
 
-export function fetchOrganization(term){
-
-  function getOrganizations() {
-    return axios.get('/api/get-organizations/'+ term) // triggers a server side route
-      .then(function (response) {
-        const orgs = JSON.parse(response.data.body);
-        return orgs
-      })
-  }
-  const request = getOrganizations();
-  return{
-    type: FETCH_ORG,
-    payload: request
-  }
+function getOrganizations(term) {
+  return axios.get('/api/get-organizations/' + term). // triggers a server side route
+  then(function(response) {
+    const orgs = JSON.parse(response.data.body);
+    return orgs
+  })
 }
 
-export function createUser(values, callback){
-  const request = axios.post(`/api/signup`, values)
-    .then(()=>callback())
-  return{
-    type: CREATE_USER,
-    payload: request
-  }
+export function fetchOrganization(term) {
+  const request = getOrganizations(term);
+  return {type: FETCH_ORG, payload: request}
 }
 
-export function loginUser(values, callback){
-  const request = axios.post(`/api/login`, values)
-    .then(()=>callback())
-  return{
-    type: LOGIN_USER,
-    payload: request
-  }
+export function createUser(values, callback) {
+  const request = axios.post(`/api/signup`, values).then(() => callback())
+  return {type: CREATE_USER, payload: request}
 }
 
-export function generateDonation(values, callback){
-  // const request = axios.post(`/api/donation`, values)
-  //   .then(()=>callback())
-  // request should be list of orgs
-  // clean values to separate into donation amount and search Criteria
-  //right now the object comes back where the keys are the categories. lets just
-  //those little keys in an array.
-  //use search criteria to make an org hunter request.
-  //return one org from that request
-  //make that request again each time a new org is needed.
-  console.log('values:', values);
-    const donation_criteria = _.keys(values);
-    _.remove(donation_criteria,(key)=> { return key === 'donation-amount'});
-    console.log('criteria',donation_criteria);
-    const donation_amount = _.findKey('donation-amount');
-    var donation = new Donation(donation_criteria, donation_amount);
-    console.log('donation:', donation);
-    const request = values;
-    return{
-      type: GENERATE_DONATION,
-      payload: request
-    }
-  }
+export function loginUser(values, callback) {
+  const request = axios.post(`/api/login`, values).then(() => callback())
+  return {type: LOGIN_USER, payload: request}
+}
+
+export function generateDonation(values, callback) {
+
+  // clean values to separate into donation amount and search criteria and store
+  //them on an object
+  const donation_amount = (values['donation-amount']);
+  const donation_criteria = _.keys(values);
+  //remove donation-amount from criteria list
+  _.remove(donation_criteria, (key) => {return key === 'donation-amount'});
+  var donation = new Donation(donation_criteria, donation_amount);
+  //choose a random criteria from the list and set the payload to the orgHunter request
+  //payload is the promise/results as data on returned object.
+  const random = Math.floor(Math.random() * (donation.criteria.length))
+  const term = donation.criteria[random];
+  const request = getOrganizations(term);
+  return {type: GENERATE_DONATION, payload: request}
+
+  //hook up showing results as we did in the search organizations sitch
+}
