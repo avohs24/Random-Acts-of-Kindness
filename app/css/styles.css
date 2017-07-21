@@ -40,6 +40,27 @@ nav .nav-wrapper {
 nav ul a {
   color: #000; }
 
+.navbar-fixed {
+  z-index: 999; }
+
+.navbar-fixed {
+  z-index: 998; }
+
+.side-nav {
+  background-color: #26A69A; }
+
+.side-nav li > a {
+  color: #fff; }
+
+.side-nav li > a > i.material-icons {
+  color: #fff; }
+
+nav .nav-wrapper i {
+  line-height: 40px; }
+
+#sidenav-overlay {
+  z-index: 1; }
+
 p {
   color: #26A69A;
   line-height: 24px;
@@ -56,6 +77,13 @@ p {
 .main {
   width: 100%;
   height: 100%; }
+
+.arima {
+  font-family: 'Arima Madurai';
+  font-size: 32px; }
+  @media screen and (max-width: 850px) {
+    .arima {
+      font-size: 22px; } }
 
 #profile {
   width: 80%;
@@ -102,6 +130,12 @@ p {
 .padding {
   padding-bottom: 10px; }
 
+.padding {
+  padding: 10px; }
+
+.paddingtwo {
+  padding: 30px; }
+
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
   background-color: #26A69A;
   color: #fff; }
@@ -123,12 +157,6 @@ h2 {
   font-family: "Crimson Text", serif;
   margin-left: 10px; }
 
-.padding {
-  padding: 10px; }
-
-.paddingtwo {
-  padding: 30px; }
-
 .bodycontent {
   width: 650px;
   height: 400px;
@@ -149,12 +177,6 @@ h2 {
   -ms-border-radius: 3px;
   border-radius: 3px; }
 
-.headerbg {
-  background-color: #26A69A;
-  width: 100%;
-  height: 100%;
-  color: #fff; }
-
 .logincontainer {
   width: 30%;
   height: 30%;
@@ -166,6 +188,10 @@ h2 {
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   border-radius: 3px; }
+  @media screen and (max-width: 850px) {
+    .logincontainer {
+      width: 80%;
+      height: 80%; } }
 
 .donationcontainer {
   width: 50%;
@@ -196,6 +222,12 @@ textarea.materialize-textarea {
   display: none;
   visibility: hidden; }
 
+.headerbg {
+  background-color: #26A69A;
+  width: 100%;
+  height: 100%;
+  color: #fff; }
+
 .profilebg {
   background-color: #fff;
   background-image: none; }
@@ -208,10 +240,6 @@ a {
   padding: 0 5px;
   text-align: center; }
 
-.arima {
-  font-family: 'Arima Madurai';
-  font-size: 32px; }
-
 .textcolor1 {
   color: #A60461; }
 
@@ -220,6 +248,10 @@ a {
 
 .textcolor3 {
   color: #2C6485; }
+
+.whitefont {
+  color: #fff;
+  margin: 0 auto; }
 
 .purplearrow {
   background-color: #584477;
@@ -230,27 +262,7 @@ a {
   -ms-border-radius: 20px;
   border-radius: 20px; }
 
-.whitefont {
-  color: #fff;
-  margin: 0 auto; }
-
-nav .nav-wrapper i {
-  line-height: 40px; }
-
-#sidenav-overlay {
-  z-index: 1; }
-
-.navbar-fixed {
-  z-index: 999; }
-
-.navbar-fixed {
-  z-index: 998; }
-
-.side-nav {
-  background-color: #26A69A; }
-
-.side-nav li > a {
-  color: #fff; }
-
-.side-nav li > a > i.material-icons {
-  color: #fff; }
+@media screen and (max-width: 850px) {
+  div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap; } }

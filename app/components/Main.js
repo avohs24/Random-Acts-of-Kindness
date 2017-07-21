@@ -12,13 +12,13 @@ export default class Main extends Component {
         <nav>
           <div className="nav-wrapper">
             <div className="row">
-              <div className="col m3">
+              <div className="col m2">
                 <a href="#" className="brand-logo"><img className="smallimg" src={LogoImg} /></a>
               </div>
-              <div className="col m7">
+              <div className="col s3 m8">
                 <p className="center arima"><span className="textcolor3">R</span>andom<span className="textcolor1">&nbsp;A</span>cts&nbsp;of&nbsp;<span className="textcolor2">K</span>indness<br /></p>
               </div>
-              <div className="col m1 right">
+              <div className="col s4 m2 right">
                 <SideNav
                   trigger={<Button><i className="center material-icons">menu</i></Button>}
                   options={{ 
