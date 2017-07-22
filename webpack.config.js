@@ -1,8 +1,16 @@
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/public/index.html',
   filename: 'index.html',
   inject: 'body'
+});
+
+var jQueryPlugIn = new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery",
+        Hammer: "hammerjs/hammer"
 });
 
 module.exports = {
@@ -72,7 +80,7 @@ module.exports = {
    
     ]
   },
-  plugins: [HTMLWebpackPluginConfig],
+  plugins: [HTMLWebpackPluginConfig, jQueryPlugIn],
   // This lets us debug our react code in chrome dev tools. Errors will have lines and file names
   // Without this the console says all errors are coming from just coming from bundle.js
   devtool: "eval-source-map"
