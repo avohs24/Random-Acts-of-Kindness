@@ -1,21 +1,20 @@
 var express = require("express");
 var router = express.Router();
 var db = require("../models");
-var passport = require ("../config/passport.js");
+var passport = require('passport');
 
 
 module.exports = function (app){
 
-	app.post("/login", passport.authenticate("local",
-		{ failureRedirect: '/login'}),
-		function(req, res){
-			res.redirect('/');
-		});
-
+app.post('/login', passport.authenticate('local-login', { successRedirect: '/',
+                                                    failureRedirect: '/login',
+																									 	failureFlash: true }));
 
 // Route for signing up
 
-app.post("/api/signup", function(req, res) {
+app.post("/api/signup",
+
+	function(req, res) {
     console.log(req.body);
     db.User.create({
 		id: req.body.id,
