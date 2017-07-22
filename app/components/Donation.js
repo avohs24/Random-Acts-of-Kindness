@@ -17,7 +17,12 @@ class Donation extends Component {
     const orgIndex = _.keysIn(orgObj)
     const org = orgObj[orgIndex]
     if(this.props.donation.length < 1){
-      return <h1><Link to='donation-criteria'>Please enter your criteria to see a match</Link></h1>
+      return (
+      <div>
+        <h1 className='center'>Please enter your criteria to see a match</h1>
+        <button className='center' className="btn waves-effect waves-light"><Link to='donation-criteria'>Go back to Criteria</Link></button>
+      </div>
+      )
     }
     return (
       <div>
@@ -29,7 +34,13 @@ class Donation extends Component {
             click on the organization title to contribute.
           </p>
           <div id="randomcharity" className="center">
-            <h3>{org.charityName}</h3>
+            {console.log(org)}
+            <h3><a href={org.url} target='_blank'>{org.charityName}</a></h3>
+            <h5>Category: {org.category}</h5>
+            <h6>{org.city}, {org.state}</h6>
+            <button className="btn waves-effect waves-light"><a href={org.url} target='_blank'>Website</a></button>
+
+            <p>{org.missionStatemnt}</p>
           </div>
           <div className="row">
             <div className="col m6 padding">
@@ -45,7 +56,7 @@ class Donation extends Component {
         </div>
         <div className="paddingtwo center">
           <button id="charitydonate" className="btn waves-effect waves-light" type="submit" name="action">Donate
-              <i className="material-icons right">send</i>
+                <Link to='donation-receipts'><i className="material-icons right">send</i></Link>
           </button>
         </div>
       </div>
