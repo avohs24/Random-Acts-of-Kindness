@@ -55,4 +55,12 @@ export function generateDonation(values, callback) {
   return {type: GENERATE_DONATION, payload: request}
 
   //hook up showing results as we did in the search organizations sitch
+export function loginUser(values, callback){
+  const request = axios.post(`/login`, values)
+    .then(()=>callback())
+  return{
+    type: LOGIN_USER,
+    payload: request
+  }
+
 }

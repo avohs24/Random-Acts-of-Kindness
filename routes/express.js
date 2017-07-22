@@ -1,29 +1,31 @@
 var express = require("express");
 var router = express.Router();
 var db = require("../models");
-var passport = require("../config/passport.js")
+var passport = require('passport');
 
-module.exports = function(app) {
 
-  app.post("/api/login", passport.authenticate("local", function(req, res) {
-    // res.json ("/login");
-    res.json(req.body);
-  }));
+module.exports = function (app){
 
-  // Route for signing up
+app.post('/login', passport.authenticate('local-login', { successRedirect: '/',
+                                                    failureRedirect: '/login',
+																									 	failureFlash: true }));
 
-  app.post("/api/signup", function(req, res) {
+// Route for signing up
+
+app.post("/api/signup",
+
+	function(req, res) {
     console.log(req.body);
     db.User.create({
-      id: req.body.id,
-      firstName: req.body.FirstName,
-      lastName: req.body.LastName,
-      username: req.body.username,
-      password: req.body.signupPassword,
-      creditCard: req.body.creditCard,
-      streetAddress: req.body.Address,
-      state: req.body.State,
-      zip: req.body.zipCode
+		id: req.body.id,
+		firstName: req.body.FirstName,
+		lastName: req.body.LastName,
+		username: req.body.username,
+		password: req.body.signupPassword,
+		creditCard: req.body.creditCard,
+		streetAddress: req.body.Address,
+		state: req.body.State,
+		zip: req.body.zipCode
     }).then(function() {
       res.redirect(200, "/api/login");
     }).catch(function(err) {
@@ -31,61 +33,68 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/api/receipt", function(req, res) {
-    console.log(req.body);
-    db.Receipt.create({id: req.body.id, firstName: req.body.firstName, lastName: req.body.lastName, Amount_donated: req.body.Amount_donated}).then(function() {
-      res.redirect(200, "/api/login");
-    }).catch(function(err) {
-      res.json(err);
-    });
-  });
+	app.post("/api/receipt", function(req, res) {
+	    console.log(req.body);
+	    db.Receipt.create({
+	        id: req.body.id,
+	        firstName: req.body.firstName,
+	        lastName: req.body.lastName,
+	        Amount_donated: req.body.Amount_donated
 
-  // GET
+	    }).then(function() {
+	      res.redirect(200, "/api/login");
+	    }).catch(function(err) {
+	      res.json(err);
+	    });
+	  });
 
-  // Route for signing user out
+// GET
 
-  app.get("/logout", function(req, res) {
+// Route for signing user out
+
+ app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
   });
 
-  // Route for getting data for receipt
+ // Route for getting data for receipt
 
-  app.get("/api/receipt", function(req, res) {
+ app.get("/api/receipt", function(req, res) {
     if (!req.receipt) {
       res.json({});
-    } else {
-      res.json({id: req.user.id, firstName: req.receipt.firstName, lastName: req.receipt.lastName, Amount_donated: req.receipt.Amount_donated});
-    };
-  });
-
-  // Route for getting data for profile
-  app.get("/api/user", function(req, res) {
-    if (!req.user) {
-      res.json({});
-    } else {
-      // db.Users.findAll({}).then((user) => {
-      //   res.json(user);
-      //   });
-      //TODO: shouldn't this be querying the db?
-
+    }
+    else {
       res.json({
-
-        id: req.body.id,
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        username: req.body.username,
-        password: req.body.password,
-        creditCard: req.body.creditCard,
-        streetAddress: req.body.streetAddress,
-        state: req.body.state,
-        zip: req.body.zip
+        id: req.user.id,
+        firstName: req.receipt.firstName,
+        lastName: req.receipt.lastName,
+        Amount_donated: req.receipt.Amount_donated
       });
     };
   });
 
-  app.post("/api/donation", function(req, res) {
-    res.json(req.body);
-  })
+
+// Route for getting data for profile
+app.get("/api/user", function(req, res) {
+    if (!req.user) {
+      res.json({
+			});
+    }
+    else {
+
+      res.json({
+
+		id: req.body.id,
+		firstName: req.body.firstName,
+		lastName: req.body.lastName,
+		username: req.body.username,
+		password: req.body.password,
+		creditCard: req.body.creditCard,
+		streetAddress: req.body.streetAddress,
+		state: req.body.state,
+		zip: req.body.zip
+	  });
+    };
+  });
 
 }
