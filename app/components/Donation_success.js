@@ -10,8 +10,12 @@ export default class SignIn extends Component {
             <div className="row">
                 <p>Thank you for your generosity. Details pertaining to your contribution are listed below.<br /><br /><span className="right">- RAK</span></p>
                 <div id="receipts"></div>
-                <Link to='/donation-portal' className="btn waves-effect waves-light">My Donation History</Link>
-                <Link to='/' className="btn waves-effect waves-light">Home</Link>
+                <div className="paddingtwo center">
+                  <Link to='/donation-portal' className="btn waves-effect waves-light">My Donation History</Link>
+                </div>
+                <div className="paddingtwo center">
+                  <Link to='/' className="btn waves-effect waves-light">Home</Link>
+                </div>
             </div>
           </div>
     );

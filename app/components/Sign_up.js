@@ -17,11 +17,9 @@ class SignUp extends Component {
   }
 
   onSubmit(values) {
-    //call action creator to post to api route
-    //TODO: see that data being sent by form matches post api route
     //TODO: implement front-end validation to make sure that data is clean b4 being posted (avoid Sequelize errors in console and gracefully fail)
     this.props.createUser(values, () => {
-      this.props.history.push('/donation-success');
+      this.props.history.push('/donation-criteria');
     });
   }
 

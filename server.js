@@ -50,7 +50,7 @@ require('./config/passport.js')(app, passport);
 app.get('/api/get-organizations/:term', function (req, res) {
   const API_KEY = '58c5806d11fbc6c7da9b796db4f9a77c';
   const ROOT_URL = `http://data.orghunter.com/v1/charitysearch?user_key=${API_KEY}`;
-  const url = `${ROOT_URL}&searchTerm=$`;
+  const url = `${ROOT_URL}&searchTerm=`;
   const query = req.params.term
   function orgRequest(endpoint,term){
     request(endpoint+term , function (error, response, body) {
@@ -60,18 +60,32 @@ app.get('/api/get-organizations/:term', function (req, res) {
   orgRequest(url, query);
 });
 
-//server-side org hunter api call for all orga
-app.get('/api/get-organizations', function (req, res) {
+//server-side org hunter api call by term
+app.get('/api/get-organization/:term/:rows', function (req, res) {
   const API_KEY = '58c5806d11fbc6c7da9b796db4f9a77c';
-  const ROOT_URL = `http://data.orghunter.com/v1/charitysearch?user_key=${API_KEY}`;
-  const url = `${ROOT_URL}`;
+  const ROOT_URL = `http://data.orghunter.com/v1/charitysearch?user_key=${API_KEY}&eligible=1 `;
   const query = req.params.term
-  function orgRequest(endpoint){
-    request(endpoint, function (error, response, body) {
+  const rows = req.params.rows
+  function orgRequest(endpoint,term, rows){
+    console.log('resquesting:', `${endpoint}&searchTerm=${term}$rows=${rows}`)
+    request(`${endpoint}&searchTerm=${term}$rows=${rows}` , function (error, response, body) {
       res.json(response);
     });
   };
-  orgRequest(url);
+  orgRequest(ROOT_URL, query, rows);
+});
+
+//server-side org hunter api call for all orga
+app.get('/api/get-organizations', function (req, res) {
+  const API_KEY = '58c5806d11fbc6c7da9b796db4f9a77c';
+  const ROOT_URL = `http://data.orghunter.com/v1/charitysearch?user_key=${API_KEY}&eligible=1`;
+  const query = req.params.term
+  function orgRequest(endpoint, term){
+    request(`endpoint&${term}`, function (error, response, body) {
+      res.json(response);
+    });
+  };
+  orgRequest(ROOT_URL, query);
 });
 
 app.get('*', function(request, response) {
