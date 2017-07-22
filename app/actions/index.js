@@ -51,6 +51,7 @@ export function generateDonation(values, callback) {
   const random = Math.floor(Math.random() * (donation.criteria.length))
   const term = donation.criteria[random];
   const request = getOrganizations(term);
+  callback();
   return {type: GENERATE_DONATION, payload: request}
 
   //hook up showing results as we did in the search organizations sitch

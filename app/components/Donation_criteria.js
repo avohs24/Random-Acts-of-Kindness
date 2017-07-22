@@ -8,6 +8,23 @@ import {generateDonation} from '../actions';
 
 
 class Criteria extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {term: ''};
+    // bind this context
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+
+  onSubmit(values) {
+    event.preventDefault();
+    //TODO: implement front-end validation to make sure that data is clean b4 being posted (avoid Sequelize errors in console and gracefully fail)
+    this.props.generateDonation(values, () => {
+      this.props.history.push('/donation');
+    });
+  }
+
   renderField(field) {
     return (
       <div className='col m3'>
@@ -17,13 +34,6 @@ class Criteria extends Component {
         </p>
       </div>
     )
-  }
-
-  onSubmit(values) {
-    //TODO: implement front-end validation to make sure that data is clean b4 being posted (avoid Sequelize errors in console and gracefully fail)
-    this.props.generateDonation(values, () => {
-      this.props.history.push('/donation');
-    });
   }
 
   render() {
@@ -173,5 +183,7 @@ class Criteria extends Component {
     );
   }
 }
+
+
 
 export default reduxForm({form: 'PostNewDonation'})(connect(null, {generateDonation})(Criteria));
