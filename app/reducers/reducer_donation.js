@@ -4,7 +4,7 @@ export default function(state =  [], action){
   console.log('action', action)
   switch(action.type){
     case GENERATE_DONATION:
-      return [ action.payload.data, ...state]
+      return [ action.payload.data ]
   }
   console.log('Action recieved', action);
   return state;

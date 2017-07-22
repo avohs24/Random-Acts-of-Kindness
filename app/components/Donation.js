@@ -1,9 +1,26 @@
 import React, { Component } from 'react';
-import SearchBar from '../containers/search_bar';
-import OrgList from '../containers/orgs_list';
+import { connect } from 'react-redux';
 import LogoImg from '../../public/assets/imgs/rak-logo.jpg';
 
-export default class Donation extends Component {
+class Donation extends Component {
+  //this should empty after each search
+  renderDonation(donationData, i){
+    console.log(donationData);
+    // i++
+    // return(
+    //   <tr key={`org${i}`}>
+    //     <td><a href={orgData.url}>{orgData.charityName}</a></td>
+    //     <td>{orgData.category}</td>
+    //     <td>{orgData.city}, {orgData.state}</td>
+    //     <td>{orgData.deductibilityCd}</td>
+    //     <td><button><a href={orgData.donationUrl}>donate</a></button></td>
+    //   </tr>
+    // )
+  }
+
+  random(arr){
+    Math.floor(Math.random() * (arr.criteria.length))
+  }
   render() {
     return (
       <div>
@@ -15,6 +32,8 @@ export default class Donation extends Component {
             click on the organization title to contribute.
           </p>
           <div id="randomcharity">
+              {console.log(this.props.donation)}
+
           </div>
           <div className="row">
             <div className="col m6 padding">
@@ -37,3 +56,9 @@ export default class Donation extends Component {
     );
   }
 }
+
+function mapStateToProps({donation}){
+  return { donation }
+}
+
+export default connect(mapStateToProps)(Donation)
