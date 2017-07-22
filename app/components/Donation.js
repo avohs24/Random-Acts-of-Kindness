@@ -1,27 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
+import _ from 'lodash';
 import LogoImg from '../../public/assets/imgs/rak-logo.jpg';
 
 class Donation extends Component {
-  //this should empty after each search
-  renderDonation(donationData, i){
-    console.log(donationData);
-    // i++
-    // return(
-    //   <tr key={`org${i}`}>
-    //     <td><a href={orgData.url}>{orgData.charityName}</a></td>
-    //     <td>{orgData.category}</td>
-    //     <td>{orgData.city}, {orgData.state}</td>
-    //     <td>{orgData.deductibilityCd}</td>
-    //     <td><button><a href={orgData.donationUrl}>donate</a></button></td>
-    //   </tr>
-    // )
+  componentDidMount(){
   }
 
   random(arr){
     Math.floor(Math.random() * (arr.criteria.length))
   }
+
   render() {
+    const orgObj = (_.pick(this.props.donation[0], [Math.floor(Math.random() * (20))]))
+    const orgIndex = _.keysIn(orgObj)
+    const org = orgObj[orgIndex]
+    if(this.props.donation.length < 1){
+      return <h1><Link to='donation-criteria'>Please enter your criteria to see a match</Link></h1>
+    }
     return (
       <div>
         <div className="container donationcontainer">
@@ -31,9 +28,8 @@ class Donation extends Component {
             choice. If you'd like to explore other choices please click on the right arrow, otherwise
             click on the organization title to contribute.
           </p>
-          <div id="randomcharity">
-              {console.log(this.props.donation)}
-
+          <div id="randomcharity" className="center">
+            <h3>{org.charityName}</h3>
           </div>
           <div className="row">
             <div className="col m6 padding">

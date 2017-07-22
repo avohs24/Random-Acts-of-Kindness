@@ -15,7 +15,7 @@ export function Donation(criteria, donation_amount) {
 }
 //return 20 orgnaizations
 function getOrganizations(term) {
-  return axios.get('/api/get-organizations/' + term). // triggers a server side route
+  return axios.get('/api/get-organizations/'+term). // triggers a server side route
   then(function(response) {
     const orgs = JSON.parse(response.data.body);
     return orgs
