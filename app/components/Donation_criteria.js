@@ -174,7 +174,7 @@ class Criteria extends Component {
           </div>
         <br />
         <div className="center">
-          <button id="charitydonate" className="btn waves-effect waves-light" type="submit" name="action">Donate
+          <button id="charitydonate" className="btn waves-effect waves-light" type="submit" name="action">Match Me!
               <i className="material-icons right">send</i>
           </button>
         </div>

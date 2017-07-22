@@ -4,6 +4,7 @@ import React from 'react';
 
 // Components
 import Login from '../components/Login';
+import Logout from '../components/Logout';
 import Organizations from '../components/Organizations';
 import SignUp from '../components/Sign_up';
 import DonationCriteria from '../components/Donation_criteria';
@@ -19,6 +20,7 @@ const routes = () => (
   <BrowserRouter history={createBrowserHistory()}>
     <Switch>
       <Route path="/login" component={Login} />
+      <Route path="/logout" component={Logout} />
       <Route path="/organizations" component={Organizations} />
       <Route path="/signup" component={SignUp} />
       <Route path="/donation-criteria" component={DonationCriteria} />

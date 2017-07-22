@@ -21,7 +21,7 @@ export default class Main extends Component {
               <div className="col s4 m2 right">
                 <SideNav
                   trigger={<Button><i className="center material-icons">menu</i></Button>}
-                  options={{ 
+                  options={{
                     closeOnClick: true,
                     edge: 'right',
                     menuWidth: 250,
@@ -38,7 +38,9 @@ export default class Main extends Component {
                   <SideNavItem href='/' icon='home'>Home</SideNavItem>
                   <SideNavItem href='/login' icon='person'>Login</SideNavItem>
                   <SideNavItem href='/signup' icon='assignment'>Sign Up</SideNavItem>
+                  <SideNavItem href='/' icon='home'>Home</SideNavItem>
                   <SideNavItem href='/organizations' icon='folder'>View Charities</SideNavItem>
+                  <SideNavItem href='/logout' icon='person'>Logout</SideNavItem>
                 </SideNav>
               </div>
             </div>
