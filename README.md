@@ -6,8 +6,6 @@ A project created and developed by [Meagan Gallagher](https://github.com/mgallag
 
 We find, as users, that we want to contribute financially to causes and organizations we care about, but sometimes feel overwhelmed by the plethora of worthy organizations out there and deciding the amount each deserves to receive. Furthermore, we often find ourselves donating to the larger national organizations, while remaining ignorant of smaller causes in our communities that might benefit even more from a small donation. Random-Acts-of-Kindess invites the user to enter ANY dollar amount and whatever filtering criteria she wishes (by location, cause, etc). Then, she is matched with an organization and can choose to donate or see another option. The app saves donation history, tax deductible receipts, and visualizes donation data for the user.
 
-![wireframe](/public/assets/imgs/wireframes.jpg)
-
 ## Technologies Used
 
 - Data & Database
@@ -44,3 +42,5 @@ We find, as users, that we want to contribute financially to causes and organiza
 
 ## Future Plans
 - Payment could be implemented using Stripe, but only if we were to secure 503(c)(3) status
+
+![wireframe](/public/assets/imgs/wireframes.jpg)
