@@ -14,7 +14,7 @@ We find, as users, that we want to contribute financially to causes and organiza
   - Express.js
   - Redux
 - APIs
-  - Stripe
+  - Stripe (pending)
   - Org Hunter
 - Front End Development
   - React
