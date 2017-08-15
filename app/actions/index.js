@@ -46,18 +46,23 @@ export function loginUser(values, callback) {
 }
 
 export function generateDonation(values, callback) {
-
+  const dummyCriteria = ['wildlife', 'abuse','veterans','homeless','civil','welfare','children','art','society','international','welfare']
   // clean values to separate into donation amount and search criteria and store
   //them on an object
   const donation_amount = (values['donation-amount']);
-  const donation_criteria = _.keys(values);
   //remove donation-amount from criteria list
-  _.remove(donation_criteria, (key) => {return key === 'donation-amount'});
+  const donation_criteria = _.keys(values);
+  if(donation_criteria.indexOf('donation_amount') !== -1){
+    const index = donation_criteria.indexOf('donation_amount');
+    donation_criteria.splice(index,1);
+  };
+  console.log("donation_criteria",donation_criteria);
   var donation = new Donation(donation_criteria, donation_amount);
   //choose a random criteria from the list and set the payload to the orgHunter request
   //payload is the promise/results as data on returned object.
-  const random = Math.floor(Math.random() * (donation.criteria.length))
-  const term = donation.criteria[random];
+  const random = len => Math.floor(Math.random() * (len));
+  const term = donation.criteria[random(donation.criteria.length)] || dummyCriteria[random(dummyCriteria.length)];
+  console.log('term', term);
   const request = getOrganizations(term);
   callback();
   return {type: GENERATE_DONATION, payload: request}

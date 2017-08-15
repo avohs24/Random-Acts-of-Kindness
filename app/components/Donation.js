@@ -10,8 +10,11 @@ class Donation extends Component {
   }
 
   nextClick(){
+    const orgObj = (_.pick(this.props.donation[0], [Math.floor(Math.random() * (20))]))
+    const orgIndex = _.keysIn(orgObj)
+    const org = orgObj[orgIndex];
     // TODO: set current term to state and use to call same category instead of hard code
-    this.props.generateDonation('wildlife', ()=> {
+    this.props.generateDonation(org, ()=> {
       this.props.history.push('/donation');
     })
   }
@@ -23,7 +26,7 @@ class Donation extends Component {
   render() {
     const orgObj = (_.pick(this.props.donation[0], [Math.floor(Math.random() * (20))]))
     const orgIndex = _.keysIn(orgObj)
-    const org = orgObj[orgIndex]
+    const org = orgObj[orgIndex];
     if(this.props.donation.length < 1){
       return (
       <div className='row'>
@@ -42,7 +45,7 @@ class Donation extends Component {
             click on the organization title to contribute.
           </p>
           <div id="randomcharity" className="center">
-            {console.log(org)}
+            {console.log('org: ',org)}
             <h3><a href={org.url} target='_blank'>{org.charityName}</a></h3>
             <h5>Category: {org.category}</h5>
             <h6>{org.city}, {org.state}</h6>
