@@ -99,8 +99,44 @@ class SignUp extends Component {
 
 function validate(values) {
  const errors = {};
+ const pwReg = new RegExp('(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20}');
  if(!values.FirstName){
-   errors.FirstName = "Enter a first name!"
+   errors.FirstName = "Enter a first name"
+ }
+
+ if(!values.LastName){
+   errors.LastName = "Enter a last name"
+ }
+
+ if(!values.Address){
+   errors.Address = "Enter a valid address please"
+ }
+
+ if(!values.City){
+   errors.City = "Enter a valid city"
+ }
+
+ if(!values.ZipCode){
+   errors.ZipCode = "Enter a valid zip code"
+ }
+
+ if(!values.State){
+   errors.State = "Enter a valid state"
+ }
+
+
+ if(!values.UserName){
+   //TODO make sure that user names are unique
+   errors.UserName = "Enter a valid user name"
+ }
+
+ if( pwReg.test(values.SignupPassword) === false || !values.SignupPassword ){
+   errors.SignupPassword = "Password must contain 8 characters and at least one number, one letter and one unique character such as !#$%&? ";
+ }
+
+ if(pwReg.test(values.SignupPassword) === true && values.SignupPassword !== values.ConfirmPassword ){
+   errors.SignupPassword = "passwords must match";
+   errors.ConfirmPassword = "passwords must match";
  }
 
  return errors;

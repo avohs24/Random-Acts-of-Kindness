@@ -201,7 +201,6 @@ class Criteria extends Component {
 function validate(values) {
   const errors = {};
   const reg = new RegExp('^\\d+$');
-  console.log(values.donation_amount, reg.test(values.donation_amount));
   if(!values.donation_amount || reg.test(values.donation_amount) === false){
     errors.donation_amount = "Please enter a valid donation amount"
   }
