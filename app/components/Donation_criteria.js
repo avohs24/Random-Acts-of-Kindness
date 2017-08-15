@@ -4,16 +4,14 @@ import OrgList from '../containers/orgs_list';
 import {Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
-import {generateDonation} from '../actions';
-
+import {term, generateDonation} from '../actions';
 
 class Criteria extends Component {
   constructor(props){
     super(props);
-
-    this.state = {term: ''};
-    // bind this context
-    this.onSubmit = this.onSubmit.bind(this);
+    // this.state = {term: ''};
+    // // bind this context
+    // this.onSubmit = this.onSubmit.bind(this);
   }
 
 
@@ -202,7 +200,9 @@ class Criteria extends Component {
 
 function validate(values) {
   const errors = {};
-  if(!values.donation_amount){
+  const reg = new RegExp('^\\d+$');
+  console.log(values.donation_amount, reg.test(values.donation_amount));
+  if(!values.donation_amount || reg.test(values.donation_amount) === false){
     errors.donation_amount = "Please enter a valid donation amount"
   }
   return errors

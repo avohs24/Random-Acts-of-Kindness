@@ -5,6 +5,5 @@ export default function(state =  [], action){
     case FETCH_ORG:
       return [ action.payload.data, ...state]
   }
-  console.log('Action recieved', action);
   return state;
 }
