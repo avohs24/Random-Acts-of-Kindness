@@ -101,6 +101,7 @@ function validate(values) {
  const errors = {};
  const pwReg = new RegExp('^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$');
  console.log(values.SignupPassword, pwReg.test(values.SignupPassword));
+ 
  if(!values.FirstName){
    errors.FirstName = "Enter a first name"
  }
