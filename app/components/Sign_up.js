@@ -99,7 +99,8 @@ class SignUp extends Component {
 
 function validate(values) {
  const errors = {};
- const pwReg = new RegExp('(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{6,20}');
+ const pwReg = new RegExp('^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$');
+ console.log(values.SignupPassword, pwReg.test(values.SignupPassword));
  if(!values.FirstName){
    errors.FirstName = "Enter a first name"
  }
@@ -131,7 +132,7 @@ function validate(values) {
  }
 
  if( pwReg.test(values.SignupPassword) === false || !values.SignupPassword ){
-   errors.SignupPassword = "Password must contain 8 characters and at least one number, one letter and one unique character such as !#$%&? ";
+   errors.SignupPassword = "Password must contain 8 characters length (2 letters in Upper Case, 1 Special Character (!@#$&*), 2 numerals (0-9), 3 letters in Lower Case) ";
  }
 
  if(pwReg.test(values.SignupPassword) === true && values.SignupPassword !== values.ConfirmPassword ){
