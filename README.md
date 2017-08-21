@@ -42,6 +42,7 @@ We find, as users, that we want to contribute financially to causes and organiza
 
 ## Future Plans
 - Payment could be implemented using Stripe, but only if we were to secure 503(c)(3) status
-- The data coming back from the API needs to be cleaned in order to filter undesired or ineligable organizations.
+- The data coming back from the API needs to be cleaned in order to filter undesired or ineligable organizations
+- The organizations can be filtered by distance using the Orghunter geolocation api
 ## Wireframes!
 ![wireframe](/public/assets/imgs/wireframes.jpg)
