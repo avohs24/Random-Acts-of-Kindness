@@ -4,21 +4,18 @@ import OrgList from '../containers/orgs_list';
 import {Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
-import {generateDonation} from '../actions';
-
+import {term, generateDonation} from '../actions';
 
 class Criteria extends Component {
   constructor(props){
     super(props);
-
-    this.state = {term: ''};
-    // bind this context
-    this.onSubmit = this.onSubmit.bind(this);
+    // this.state = {term: ''};
+    // // bind this context
+    // this.onSubmit = this.onSubmit.bind(this);
   }
 
 
   onSubmit(values) {
-    event.preventDefault();
     //TODO: implement front-end validation to make sure that data is clean b4 being posted (avoid Sequelize errors in console and gracefully fail)
     this.props.generateDonation(values, () => {
       this.props.history.push('/donation');
@@ -29,7 +26,27 @@ class Criteria extends Component {
     return (
       <div className='col m3'>
         <p>
-          <input type='checkbox' id={field.id} {...field.input} />
+          <input
+            type='checkbox'
+            id={field.id}
+            {...field.input}
+          />
+          <label htmlFor={field.htmlFor}>{field.label}</label>
+        </p>
+      </div>
+    )
+  }
+
+  renderAmountField(field) {
+    return (
+      <div className='col m3'>
+        <p>
+          <input
+            type='text'
+            placeholder="0.00"
+            {...field.input}
+          />
+          {field.meta.touched ? field.meta.error : ''}
           <label htmlFor={field.htmlFor}>{field.label}</label>
         </p>
       </div>
@@ -37,7 +54,7 @@ class Criteria extends Component {
   }
 
   render() {
-    const {handleSubmit} = this.props;
+    const {fields={donation_amount}, handleSubmit} = this.props;
     return (
       <div className="container" id="profile">
         <h2 className="center headerbg padding">Random Charity Generator</h2>
@@ -46,8 +63,8 @@ class Criteria extends Component {
                 to get started:
                 </p>
                 <ol>
-            <li>Select the categories that you're most interested in donating to.</li>
-            <li>Insert the amount you'd like to donate.</li>
+            <li>If you'd like to refine your match, select the categories that you're most interested in donating to.</li>
+            <li>Insert the amount you'd like to donate (required).</li>
             <li>Match Me!</li>
           </ol>
           <p className="padding">
@@ -157,16 +174,13 @@ class Criteria extends Component {
               htmlFor="homeless"
               label="homeless"
               component={this.renderField}/>
-
           </div>
           <div className="row center">
             <div className="input-field col m12">
               <p className="padding center">Please enter the amount you'd like to contribute.</p>
               <Field
-                name="donation-amount"
-                component="input"
-                type="text"
-                placeholder="0.00"
+                name="donation_amount"
+                component={this.renderAmountField}
                 id="dollar-sign"
                 className="center validate"
                 />
@@ -184,6 +198,21 @@ class Criteria extends Component {
   }
 }
 
+function validate(values) {
+  const errors = {};
+  const reg = new RegExp('^\\d+$');
+  if(!values.donation_amount || reg.test(values.donation_amount) === false){
+    errors.donation_amount = "Please enter a valid donation amount"
+  }
+  return errors
+}
 
 
-export default reduxForm({form: 'PostNewDonation'})(connect(null, {generateDonation})(Criteria));
+
+export default reduxForm({
+  form: 'PostNewDonation',
+  validate,
+  fields: ['donation_amount']
+})(
+  connect(null, {generateDonation})(Criteria)
+);

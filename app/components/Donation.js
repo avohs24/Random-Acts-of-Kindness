@@ -3,15 +3,19 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import LogoImg from '../../public/assets/imgs/rak-logo.jpg';
-import { generateDonation } from '../actions/index'
+import { term, generateDonation } from '../actions/index';
 
 class Donation extends Component {
   componentDidMount(){
   }
 
   nextClick(){
-    // TODO: set current term to state and use to call same category instead of hard code
-    this.props.generateDonation('wildlife', ()=> {
+    //TODO: save term in store use consistent search criteria
+    const dummyCriteria = ['wildlife', 'abuse','veterans','homeless','civil','welfare','children','art','society','international','welfare'];
+    const random = len => Math.floor(Math.random() * (len));
+    const term = dummyCriteria[random(dummyCriteria.length)];
+    console.log(term);
+    this.props.generateDonation(term, ()=> {
       this.props.history.push('/donation');
     })
   }
@@ -23,7 +27,7 @@ class Donation extends Component {
   render() {
     const orgObj = (_.pick(this.props.donation[0], [Math.floor(Math.random() * (20))]))
     const orgIndex = _.keysIn(orgObj)
-    const org = orgObj[orgIndex]
+    const org = orgObj[orgIndex];
     if(this.props.donation.length < 1){
       return (
       <div className='row'>
@@ -37,12 +41,11 @@ class Donation extends Component {
         <div className="container donationcontainer">
           <h2 className="headerbg padding center">Is it a Match?</h2>
           <p>
-            Based on your interests, we've selected the following charity as your first
-            choice. If you'd like to explore other choices please click on the right arrow, otherwise
+            Based on your interests, we've selected the following charity. If you'd like to explore other choices please click on the right arrow, otherwise
             click on the organization title to contribute.
           </p>
           <div id="randomcharity" className="center">
-            {console.log(org)}
+            {console.log('org1: ',org)}
             <h3><a href={org.url} target='_blank'>{org.charityName}</a></h3>
             <h5>Category: {org.category}</h5>
             <h6>{org.city}, {org.state}</h6>
