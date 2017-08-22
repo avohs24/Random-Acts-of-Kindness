@@ -32,7 +32,6 @@ class SearchBar extends Component {
           placeholder='search all organizations'
           className='form-control'
           value={this.state.term}
-          //value of this is not Component
           onChange={this.handleInput}
          />
         <span className='input-group-button'>

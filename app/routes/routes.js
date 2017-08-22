@@ -6,6 +6,7 @@ import React from 'react';
 import Login from '../components/Login';
 import Logout from '../components/Logout';
 import Organizations from '../components/Organizations';
+import Organizations_list from '../components/Organizations_list';
 import SignUp from '../components/Sign_up';
 import DonationCriteria from '../components/Donation_criteria';
 import Donation from '../components/Donation';
@@ -17,11 +18,11 @@ import Index from '../components/Index';
 import Main from '../components/Main';
 
 const routes = () => (
-  <BrowserRouter history={createBrowserHistory()}>
     <Switch>
       <Route path="/login" component={Login} />
       <Route path="/logout" component={Logout} />
       <Route path="/organizations" component={Organizations} />
+      <Route path="/organizations_list" component={Organizations_list} />
       <Route path="/signup" component={SignUp} />
       <Route path="/donation-criteria" component={DonationCriteria} />
       <Route path="/donation" component={Donation} />
@@ -32,8 +33,6 @@ const routes = () => (
       <Route path="/index" component={Index} />
       <Route path="/" component={Index} />
     </Switch>
-  </BrowserRouter>
-
 );
 
 export default routes;

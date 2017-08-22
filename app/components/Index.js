@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import SearchBar from '../containers/search_bar';
-import LogoImg from '../../public/assets/imgs/rak-logo.jpg';
 import OrgList from '../containers/orgs_list';
+import LogoImg from '../../public/assets/imgs/rak-logo.jpg';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Login from './Login';
-// import { Link } from 'react-router';
-
 
 export default class Index extends Component {
     constructor(props) {

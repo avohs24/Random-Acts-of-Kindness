@@ -3,6 +3,7 @@ import SearchBar from '../containers/search_bar';
 import LogoImg from '../../public/assets/imgs/rak-logo.jpg';
 import OrgList from '../containers/orgs_list';
 import { Button, Icon, SideNav, SideNavItem } from 'react-materialize';
+import { Link } from 'react-router-dom';
 
 export default class Main extends Component {
   render() {
@@ -13,7 +14,7 @@ export default class Main extends Component {
           <div className="nav-wrapper">
             <div className="row">
               <div className="col m2">
-                <a href="#" className="brand-logo"><img className="smallimg" src={LogoImg} /></a>
+                <Link to='/' className="brand-logo"><img className="smallimg" src={LogoImg} /></Link>
               </div>
               <div className="col s3 m8">
                 <p className="center arima"><span className="textcolor3">R</span>andom<span className="textcolor1">&nbsp;A</span>cts&nbsp;of&nbsp;<span className="textcolor2">K</span>indness<br /></p>
