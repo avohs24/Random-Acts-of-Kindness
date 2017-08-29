@@ -38,7 +38,7 @@ We find, as users, that we want to contribute financially to causes and organiza
 - Keys have been hidden, so enter your own API keys (available on their sites)
 
 ## Unsolved Problems
-- The code could be audited to meet 508 accessibility standards.
+- The code could be audited to meet 508 accessibility standards
 
 ## Future Plans
 - Payment could be implemented using Stripe, but only if we were to secure 503(c)(3) status
