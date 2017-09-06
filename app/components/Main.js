@@ -38,7 +38,6 @@ export default class Main extends Component {
                   <SideNavItem href='/' icon='home'>Home</SideNavItem>
                   <SideNavItem href='/login' icon='person'>Login</SideNavItem>
                   <SideNavItem href='/signup' icon='assignment'>Sign Up</SideNavItem>
-                  <SideNavItem href='/' icon='home'>Home</SideNavItem>
                   <SideNavItem href='/organizations' icon='folder'>View Charities</SideNavItem>
                   <SideNavItem href='/logout' icon='person'>Logout</SideNavItem>
                 </SideNav>
